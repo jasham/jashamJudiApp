@@ -5,26 +5,26 @@ import Header from "../components/Header";
 import { LinearGradient } from "expo-linear-gradient";
 import { GradientColors } from "../components/LinearGradient";
 
-const SceoundScreen = ({ navigation }) => {
+const SecondScreen = ({ navigation }) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: "#ededed" }}>
       <Header colors={GradientColors.SecondScreen} />
       <TouchableOpacity
         onPress={() => navigation.navigate("Third")}
         style={styles.ButtonWrapper}
       >
         <LinearGradient
-          colors={["#DE2E3B", "#E64440", "#EF5F46"]}
+          colors={GradientColors.FirstScreen}
           style={styles.Button}
         >
-          <Text style={styles.BtnText}>البحص</Text>
+          <Text style={styles.BtnText}>العروض</Text>
           <View
             style={{
               width: 33,
               height: 33,
               justifyContent: "center",
               alignItems: "center",
-              borderRadius: 20,
+              borderRadius: 33 / 2,
               borderWidth: 1.4,
               border: "solid red",
               borderColor: "#fff",
@@ -41,26 +41,26 @@ const SceoundScreen = ({ navigation }) => {
           colors={["#DE2E3B", "#E64440", "#EF5F46"]}
           style={styles.Button}
         >
-          <Text style={styles.BtnText}>البحص</Text>
+          <Text style={styles.BtnText}>المفضلة</Text>
           <AntDesign name="hearto" size={30} color="#fff" />
         </LinearGradient>
       </TouchableOpacity>
       <View style={styles.LargeBtnWrapper}>
         <LinearGradient
           style={styles.LargeBtn}
-          colors={["#122054", "#122054", "#122054"]}
+          colors={GradientColors.SecondScreen}
         >
-          <Text style={{ fontSize: 40, color: "#fff" }}>سوبر مارکت</Text>
+          <Text style={{ fontSize: 30, color: "#fff" }}>سوبر مارکت</Text>
         </LinearGradient>
         <LinearGradient
           style={styles.LargeBtn}
-          colors={["#122054", "#122054", "#122054"]}
+          colors={GradientColors.SecondScreen}
         >
-          <Text style={{ fontSize: 40, color: "#fff" }}>ہابیر مارکت</Text>
+          <Text style={{ fontSize: 30, color: "#fff" }}>ہابیر مارکت</Text>
         </LinearGradient>
         <LinearGradient
           style={styles.LargeBtn}
-          colors={["#122054", "#122054", "#122054"]}
+          colors={GradientColors.SecondScreen}
         >
           <Text style={{ fontSize: 30, color: "#fff" }}>مینی مارکت </Text>
         </LinearGradient>
@@ -69,7 +69,7 @@ const SceoundScreen = ({ navigation }) => {
   );
 };
 
-export default SceoundScreen;
+export default SecondScreen;
 
 const styles = StyleSheet.create({
   ButtonWrapper: {

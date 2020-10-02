@@ -1,5 +1,8 @@
 export const GradientColors = {
-  FirstScreen: ["#DE2E3B", "#E64440", "#EF5F46"],
-  ThirdScreen: ["#061442", "#071F4A", "#093458"],
-  SecondScreen: ["#E1373D", "#E74841", "#EE5C45"],
+  FirstScreen: ["#DB2539", "#F6734A"],
+  SecondScreen: ["#0B4564", "#040537"],
+  ThirdScreen: ["#80B055", "#53B25B"],
+  PercentButton: ["#EF7816", "#EB6C60"],
+  PinkButton: ["#EC6872", "#EC4A72"],
+  YellowCard: ["#F9CF5D", "#ECB472"],
 };

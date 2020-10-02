@@ -8,24 +8,23 @@ import { GradientColors } from "../components/LinearGradient";
 const MainScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      {/* <StatusBar style="auto" backgroundColor={"red"} /> */}
       <Header colors={GradientColors.FirstScreen} />
       <TouchableOpacity
         onPress={() => navigation.navigate("Second")}
         style={styles.ButtonWrapper}
       >
         <LinearGradient
-          colors={["#DE2E3B", "#E64440", "#EF5F46"]}
+          colors={GradientColors.FirstScreen}
           style={styles.Button}
         >
-          <Text style={styles.BtnText}>البحص</Text>
+          <Text style={styles.BtnText}>العروض</Text>
           <View
             style={{
               width: 33,
               height: 33,
               justifyContent: "center",
               alignItems: "center",
-              borderRadius: 20,
+              borderRadius: 33 / 2,
               borderWidth: 1.4,
               border: "solid red",
               borderColor: "#fff",
@@ -39,94 +38,79 @@ const MainScreen = ({ navigation }) => {
           </View>
         </LinearGradient>
         <LinearGradient
-          colors={["#DE2E3B", "#E64440", "#EF5F46"]}
+          colors={GradientColors.FirstScreen}
           style={styles.Button}
         >
-          <Text style={styles.BtnText}>البحص</Text>
+          <Text style={styles.BtnText}>المفضلة</Text>
           <AntDesign name="hearto" size={30} color="#fff" />
         </LinearGradient>
       </TouchableOpacity>
       <View style={styles.LargeBtnWrapper}>
         <LinearGradient
           style={styles.LargeBtn}
-          colors={["#3bb866", "#3cb064", "#3cba68"]}
+          colors={GradientColors.ThirdScreen}
         >
-          <Text style={{ fontSize: 30 }}>حلقتہ الخجار</Text>
+          <Text style={{ fontSize: 30, color: "white" }}> حلقة الخضار</Text>
           <Image
             style={{
-              backgroundColor: "red",
               width: 70,
               height: 70,
-              borderRadius: 200,
-              marginLeft: 45,
-              position: "absolute",
-              right: 30,
+              resizeMode: "contain",
             }}
             source={{
               uri:
-                "https://new-img.patrika.com/upload/images/2015/09/15/1-nimbu-long-1442305886_766x502.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/6/62/Orange_Slice.jpg",
             }}
           />
         </LinearGradient>
         <LinearGradient
           style={styles.LargeBtn}
-          colors={["#c78e46", "#c9924b", "#cf9a55"]}
+          colors={GradientColors.PercentButton}
         >
-          <Text style={{ fontSize: 30 }}>حلقتہ الخجار</Text>
+          <Text style={{ fontSize: 30, color: "white" }}> سوق السمك </Text>
           <Image
             style={{
-              //backgroundColor: "red",
               width: 70,
               height: 70,
-              //borderRadius: 200,
-              marginLeft: 45,
-              position: "absolute",
-              right: 30,
+              resizeMode: "contain",
             }}
             source={{
               uri:
-                "https://cdn.shopify.com/s/files/1/1529/9657/articles/Blog_Post_Header_81.jpg?v=1579105473",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtr07ksDyJ2s9B8cWNjF9RfgKZtjPa_OhH6A&usqp=CAU",
             }}
           />
         </LinearGradient>
         <LinearGradient
           style={styles.LargeBtn}
-          colors={["#e0609a", "#d9689b", "#e673a7"]}
+          colors={GradientColors.PinkButton}
         >
-          <Text style={{ fontSize: 30 }}>حلقتہ الخجار</Text>
+          <Text style={{ fontSize: 30, color: "white" }}> سوق اللحوم</Text>
           <Image
             style={{
-              backgroundColor: "red",
               width: 70,
               height: 70,
-              borderRadius: 200,
-              marginLeft: 45,
-              position: "absolute",
-              right: 30,
+              resizeMode: "contain",
             }}
             source={{
               uri:
-                "https://www.kenyanews.go.ke/wp-content/uploads/2018/12/meat-2.jpg",
+                "https://i2.pickpik.com/photos/228/968/833/meat-food-eat-meat-cutting-preview.jpg",
             }}
           />
         </LinearGradient>
         <LinearGradient
           style={styles.LargeBtn}
-          colors={["#dde673", "#cbd453", "#cbd453"]}
+          colors={GradientColors.YellowCard}
         >
-          <Text style={{ fontSize: 30 }}>حلقتہ الخجار</Text>
+          <Text style={{ fontSize: 30, color: "white" }}> متاجر</Text>
           <Image
             style={{
               width: 70,
               height: 70,
-              borderRadius: 200,
-              marginLeft: 45,
-              position: "absolute",
-              right: 30,
+              resizeMode: "contain",
             }}
             source={{
               uri:
-                "https://cdn3.vectorstock.com/i/1000x1000/85/02/full-shopping-trolley-with-different-purchases-vector-14158502.jpg",
+                "https://cdn.pixabay.com/photo/2018/03/21/21/13/cart-3248227_1280.jpg",
             }}
           />
         </LinearGradient>
@@ -139,11 +123,10 @@ export default MainScreen;
 
 const styles = StyleSheet.create({
   container: {
-    // justifyContent: "center",
     alignItems: "center",
     flex: 1,
     width: "100%",
-    backgroundColor: "rgba(0,0,0,0.3)",
+    backgroundColor: "#ededed",
     alignSelf: "center",
   },
   ButtonWrapper: {
@@ -179,12 +162,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   LargeBtn: {
-    height: 80,
+    //height: 80,
     borderRadius: 20,
     alignItems: "center",
     flexDirection: "row",
-    // justifyContent: "space-around",
-    paddingHorizontal: 70,
-    paddingLeft: 100,
+    justifyContent: "space-around",
   },
 });

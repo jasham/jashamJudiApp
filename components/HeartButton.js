@@ -1,12 +1,16 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+import { GradientColors } from "./LinearGradient";
 const HeartButton = (props) => {
   return (
-    <TouchableOpacity>
-      <View
+    <TouchableOpacity onPress={props.onPress}>
+      <LinearGradient
         style={{
-          backgroundColor: "green",
+          // backgroundColor: props.backgroundColor
+          //   ? props.backgroundColor
+          //   : "",
           height: 60,
           width: 80,
           borderTopLeftRadius: 50,
@@ -18,9 +22,12 @@ const HeartButton = (props) => {
           paddingVertical: 10,
           marginVertical: 20,
         }}
+        colors={
+          props.green ? GradientColors.ThirdScreen : ["#FFFFFF", "#FFFFFF"]
+        }
       >
         {props.children}
-      </View>
+      </LinearGradient>
     </TouchableOpacity>
   );
 };

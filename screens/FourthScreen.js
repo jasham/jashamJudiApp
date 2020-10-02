@@ -1,25 +1,43 @@
 import React from "react";
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import {
+  Dimensions,
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import Header from "../components/Header";
 import { ShadowCard } from "../components/ShadowCard";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import HeartButton from "../components/HeartButton";
 import { Ionicons } from "@expo/vector-icons";
 import { GradientColors } from "../components/LinearGradient";
-const StrawberryScreen = () => {
+import TransparentHeader from "../components/TransparentHeader";
+const StrawberryScreen = ({ navigation }) => {
   return (
     <>
-      <Header colors={GradientColors.ThirdScreen} />
+      <ImageBackground
+        style={{ flex: 1, maxHeight: 160 }}
+        source={require("../assets/green.jpg")}
+      >
+        <TransparentHeader />
+      </ImageBackground>
+
+      {/* <Header colors={GradientColors.ThirdScreen} /> */}
       <View style={styles.container}>
         <Image
-          style={{ height: 100, width: 100 }}
+          style={{
+            height: 100,
+            width: 100,
+            resizeMode: "cover",
+          }}
           source={require("../assets/strawberry.png")}
         />
         <ShadowCard width="70%">
           <Text style={{ textAlign: "right", color: "red" }}>
             فراولة أمريكية
           </Text>
-          <Text style={{ fontSize: 6, textAlign: "right" }}>
+          <Text style={{ fontSize: 10, textAlign: "right" }}>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
             volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
@@ -41,7 +59,7 @@ const StrawberryScreen = () => {
             justifyContent: "space-evenly",
           }}
         >
-          <HeartButton>
+          <HeartButton green onPress={() => navigation.navigate("Fifth")}>
             <Text style={{ color: "white", textAlign: "center" }}>
               ٤٥ ريال{" "}
             </Text>
@@ -50,7 +68,7 @@ const StrawberryScreen = () => {
               <Ionicons name="md-add-circle" size={30} color="red" />
             </View>
           </HeartButton>
-          <HeartButton>
+          <HeartButton green>
             <Text style={{ color: "white", textAlign: "center" }}>
               ٤٥ ريال{" "}
             </Text>
@@ -71,6 +89,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
+    backgroundColor: "#ededed",
     alignItems: "center",
   },
 });

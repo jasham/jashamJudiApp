@@ -5,33 +5,42 @@ import {
   View,
   Image,
   ScrollView,
+  ImageBackground,
   TouchableOpacity,
+  FlatList,
 } from "react-native";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
-import Header from "../components/Header";
+import TransparentHeader from "../components/TransparentHeader";
 import { LinearGradient } from "expo-linear-gradient";
 import { GradientColors } from "../components/LinearGradient";
 
 const ThirdScreen = ({ navigation }) => {
+  const DATA = ["آنانس", "آنانس", "آنانس", "آنانس", "آنانس", "آنانس"];
   return (
-    <View style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.3)" }}>
-      <Header colors={GradientColors.ThirdScreen} />
+    <View style={{ flex: 1, backgroundColor: "#ededed" }}>
+      <ImageBackground
+        style={{ flex: 1, maxHeight: 160 }}
+        source={require("../assets/green.jpg")}
+      >
+        <TransparentHeader />
+      </ImageBackground>
+      {/* <Header colors={GradientColors.ThirdScreen} /> */}
       <TouchableOpacity
         onPress={() => navigation.navigate("Fourth")}
         style={styles.ButtonWrapper}
       >
         <LinearGradient
-          colors={["#DE2E3B", "#E64440", "#EF5F46"]}
+          colors={GradientColors.FirstScreen}
           style={styles.Button}
         >
-          <Text style={styles.BtnText}>البحص</Text>
+          <Text style={styles.BtnText}>العروض</Text>
           <View
             style={{
               width: 33,
               height: 33,
               justifyContent: "center",
               alignItems: "center",
-              borderRadius: 20,
+              borderRadius: 33 / 2,
               borderWidth: 1.4,
               border: "solid red",
               borderColor: "#fff",
@@ -45,189 +54,51 @@ const ThirdScreen = ({ navigation }) => {
           </View>
         </LinearGradient>
         <LinearGradient
-          colors={["#DE2E3B", "#E64440", "#EF5F46"]}
+          colors={GradientColors.FirstScreen}
           style={styles.Button}
         >
-          <Text style={styles.BtnText}>البحص</Text>
+          <Text style={styles.BtnText}>المفضلة</Text>
           <AntDesign name="hearto" size={30} color="#fff" />
         </LinearGradient>
       </TouchableOpacity>
-      <ScrollView style={{ height: "100%" }}>
-        <View style={styles.LargeBtnWrapper}>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <View style={styles.LargeBtn}>
-              <Text
-                style={{
-                  fontSize: 30,
-                  position: "absolute",
-                  bottom: 10,
-                  right: 10,
-                  color: "orange",
-                }}
-              >
-                آنانس
-              </Text>
-              <Image
-                style={{ width: 100, height: 100 }}
-                source={{
-                  uri:
-                    "https://img.freepik.com/free-photo/lemon-with-leaves-white-background_73289-47.jpg?size=338&ext=jpg",
-                }}
-              />
-              <AntDesign
-                style={{ position: "absolute", top: 10, left: 10 }}
-                name="hearto"
-                size={20}
-                color="black"
-              />
-            </View>
-            <View style={styles.LargeBtn}>
-              <Text
-                style={{
-                  fontSize: 30,
-                  position: "absolute",
-                  bottom: 10,
-                  right: 10,
-                  color: "orange",
-                }}
-              >
-                آنانس
-              </Text>
-              <Image
-                style={{ width: 100, height: 100 }}
-                source={{
-                  uri:
-                    "https://img.freepik.com/free-photo/lemon-with-leaves-white-background_73289-47.jpg?size=338&ext=jpg",
-                }}
-              />
-              <AntDesign
-                style={{ position: "absolute", top: 10, left: 10 }}
-                name="hearto"
-                size={20}
-                color="black"
-              />
-            </View>
-          </View>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <View style={styles.LargeBtn}>
-              <Text
-                style={{
-                  fontSize: 30,
-                  position: "absolute",
-                  bottom: 10,
-                  right: 10,
-                  color: "orange",
-                }}
-              >
-                آنانس
-              </Text>
-              <Image
-                style={{ width: 100, height: 100 }}
-                source={{
-                  uri:
-                    "https://img.freepik.com/free-photo/lemon-with-leaves-white-background_73289-47.jpg?size=338&ext=jpg",
-                }}
-              />
-              <AntDesign
-                style={{ position: "absolute", top: 10, left: 10 }}
-                name="hearto"
-                size={20}
-                color="black"
-              />
-            </View>
-            <View style={styles.LargeBtn}>
-              <Text
-                style={{
-                  fontSize: 30,
-                  position: "absolute",
-                  bottom: 10,
-                  right: 10,
-                  color: "orange",
-                }}
-              >
-                آنانس
-              </Text>
-              <Image
-                style={{ width: 100, height: 100 }}
-                source={{
-                  uri:
-                    "https://img.freepik.com/free-photo/lemon-with-leaves-white-background_73289-47.jpg?size=338&ext=jpg",
-                }}
-              />
-              <AntDesign
-                style={{ position: "absolute", top: 10, left: 10 }}
-                name="hearto"
-                size={20}
-                color="black"
-              />
-            </View>
-          </View>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              paddingBottom: 20,
-            }}
-          >
-            <View style={styles.LargeBtn}>
-              <Text
-                style={{
-                  fontSize: 30,
-                  position: "absolute",
-                  bottom: 10,
-                  right: 10,
-                  color: "orange",
-                }}
-              >
-                آنانس
-              </Text>
-              <Image
-                style={{ width: 100, height: 100 }}
-                source={{
-                  uri:
-                    "https://img.freepik.com/free-photo/lemon-with-leaves-white-background_73289-47.jpg?size=338&ext=jpg",
-                }}
-              />
-              <AntDesign
-                style={{ position: "absolute", top: 10, left: 10 }}
-                name="hearto"
-                size={20}
-                color="black"
-              />
-            </View>
-            <View style={styles.LargeBtn}>
-              <Text
-                style={{
-                  fontSize: 30,
-                  position: "absolute",
-                  bottom: 10,
-                  right: 10,
-                  color: "orange",
-                }}
-              >
-                آنانس
-              </Text>
-              <Image
-                style={{ width: 100, height: 100 }}
-                source={{
-                  uri:
-                    "https://img.freepik.com/free-photo/lemon-with-leaves-white-background_73289-47.jpg?size=338&ext=jpg",
-                }}
-              />
-              <AntDesign
-                style={{ position: "absolute", top: 10, left: 10 }}
-                name="hearto"
-                size={20}
-                color="black"
-              />
-            </View>
-          </View>
-        </View>
-      </ScrollView>
+      <View style={styles.LargeBtnWrapper}>
+        <FlatList
+          numColumns={2}
+          columnWrapperStyle={{ justifyContent: "space-evenly" }}
+          keyExtractor={(item, index) => index.toString()}
+          data={DATA}
+          renderItem={({ item, index }) => {
+            return (
+              <View style={styles.LargeBtn}>
+                <AntDesign
+                  name="hearto"
+                  size={20}
+                  color="black"
+                  style={{ alignSelf: "flex-start", marginLeft: 5 }}
+                />
+                <Image
+                  style={{ width: 100, height: 100 }}
+                  source={{
+                    uri:
+                      "https://img.freepik.com/free-photo/lemon-with-leaves-white-background_73289-47.jpg?size=338&ext=jpg",
+                  }}
+                />
+
+                <Text
+                  style={{
+                    fontSize: 30,
+                    color: "orange",
+                    alignSelf: "flex-end",
+                    marginRight: 5,
+                  }}
+                >
+                  {item}
+                </Text>
+              </View>
+            );
+          }}
+        />
+      </View>
     </View>
   );
 };
@@ -255,23 +126,21 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   BtnText: {
-    fontSize: 27,
+    fontSize: 20,
     color: "#fff",
   },
   LargeBtnWrapper: {
+    flex: 1,
+    alignSelf: "center",
     width: "100%",
-    flexDirection: "column",
-    paddingHorizontal: 10,
+
     marginTop: 17,
-    height: "100%",
-    justifyContent: "space-around",
-    paddingHorizontal: 30,
-    paddingBottom: 10,
   },
   LargeBtn: {
     height: 170,
-    width: 170,
-    flexDirection: "row",
+    width: "40%",
+    marginBottom: 20,
+
     backgroundColor: "#fff",
     borderRadius: 10,
     elevation: 12,

@@ -7,6 +7,7 @@ import RootStackScreen from "./screens/RootStackScreen";
 export default function App() {
   return (
     <>
+      <StatusBar style="dark" hidden />
       <NavigationContainer>
         <RootStackScreen />
       </NavigationContainer>

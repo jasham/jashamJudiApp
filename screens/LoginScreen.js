@@ -16,7 +16,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("../assets/bgImageLogin.png")}
+        source={require("../assets/login.jpg")}
         style={{
           flex: 1,
           resizeMode: "cover",
