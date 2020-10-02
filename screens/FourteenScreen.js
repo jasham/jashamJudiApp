@@ -5,17 +5,20 @@ import {
   View,
   Image,
   TouchableOpacity,
-  ImageBackground,
   FlatList,
 } from "react-native";
 
 import { LinearGradient } from "expo-linear-gradient";
-import { Entypo } from "@expo/vector-icons";
 import Header from "../components/Header";
 import { GradientColors } from "../components/LinearGradient";
 
 const FourteenScreen = (props) => {
-  const DATA = ["الكل", "سوبر ماركت", "حلقة الخضار", "سوق السمك"];
+  const DATA = [
+    "تم توصيل طلبك",
+    "طلبك في الطريق ",
+    " يتم تجهيز طلبك",
+    "المندوب في الطريق للمتجر ",
+  ];
   return (
     <View style={{ flex: 1, backgroundColor: "#ededed" }}>
       <Header colors={GradientColors.FirstScreen} />
@@ -55,7 +58,7 @@ const FourteenScreen = (props) => {
                   shadowOffset: { width: 4, height: 5 },
                   shadowOpacity: 0.3,
                   shadowRadius: 5,
-                  minWidth: 70,
+                  maxWidth: 100,
                   // height: 50,
                   paddingHorizontal: 10,
                   alignItems: "center",
@@ -66,7 +69,7 @@ const FourteenScreen = (props) => {
                   marginBottom: 20,
                 }}
               >
-                <Text style={{ fontSize: 15 }}>{item}</Text>
+                <Text style={{ fontSize: 12 }}>{item}</Text>
               </TouchableOpacity>
             );
           }}
@@ -93,50 +96,3 @@ const FourteenScreen = (props) => {
 };
 
 export default FourteenScreen;
-
-const styles = StyleSheet.create({
-  ButtonWrapper: {
-    width: "100%",
-    //height: 90,
-    marginTop: 17,
-    //paddingHorizontal: 10,
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-around",
-  },
-  Button: {
-    width: "49%",
-    height: 80,
-    backgroundColor: "yellow",
-    justifyContent: "space-around",
-    alignItems: "center",
-    flexDirection: "row",
-    borderRadius: 40,
-    paddingHorizontal: 20,
-  },
-  BtnText: {
-    fontSize: 27,
-    color: "#fff",
-  },
-  LargeBtnWrapper: {
-    flex: 1,
-    alignSelf: "center",
-    width: "100%",
-
-    marginTop: 17,
-  },
-  LargeBtn: {
-    minHeight: 170,
-    width: "40%",
-    marginBottom: 20,
-    paddingBottom: 10,
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    elevation: 12,
-    shadowOffset: { width: 4, height: 5 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

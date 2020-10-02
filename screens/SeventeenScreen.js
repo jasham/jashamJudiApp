@@ -1,8 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Header from "../components/Header";
-import { LinearGradient } from "expo-linear-gradient";
-import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import { GradientColors } from "../components/LinearGradient";
 const SeventeenScreen = ({ navigation }) => {
   return (

@@ -2,14 +2,15 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { ImageBackground, View, StyleSheet, Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import RootStackScreen from "./screens/RootStackScreen";
+
+import DrawerStack from "./screens/DrawerStackScreen";
 
 export default function App() {
   return (
     <>
       <StatusBar style="dark" hidden />
       <NavigationContainer>
-        <RootStackScreen />
+        <DrawerStack />
       </NavigationContainer>
     </>
   );

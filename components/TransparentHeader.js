@@ -14,7 +14,9 @@ import {
 } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 export default function TransparentHeader(props) {
+  const navigation = useNavigation();
   const DATA = ["الكل", "سوبر ماركت", "حلقة الخضار", "سوق السمك"];
   return (
     <View
@@ -34,15 +36,15 @@ export default function TransparentHeader(props) {
           </TouchableOpacity>
           <TouchableOpacity style={styles.Icon}>
             <FontAwesome5 name="hotel" size={35} color="#fff" />
-            <Text style={styles.Text}>البحص</Text>
+            <Text style={styles.Text}>المتاجر</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.Icon}>
             <FontAwesome5 name="home" size={35} color="#fff" />
-            <Text style={styles.Text}>البحص</Text>
+            <Text style={styles.Text}>الرئيسية</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.Icon}>
             <Feather name="shopping-bag" size={35} color="#fff" />
-            <Text style={styles.Text}>البحص</Text>
+            <Text style={styles.Text}>سلتي</Text>
             <MaterialIcons
               name="error"
               size={20}
@@ -50,7 +52,10 @@ export default function TransparentHeader(props) {
               style={{ position: "absolute", right: 5 }}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.Icon}>
+          <TouchableOpacity
+            onPress={() => navigation.openDrawer()}
+            style={styles.Icon}
+          >
             <Ionicons name="ios-menu" size={50} color="#fff" />
           </TouchableOpacity>
         </View>
@@ -58,6 +63,7 @@ export default function TransparentHeader(props) {
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
+          inverted
           keyExtractor={(item, index) => index.toString()}
           data={DATA}
           renderItem={({ item, index }) => {

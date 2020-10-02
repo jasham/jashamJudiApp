@@ -35,7 +35,7 @@ const SixteenScreen = ({ navigation }) => {
               onPress={() => navigation.navigate("Seventeen")}
               style={styles.buttonStyle}
             >
-              <Text style={styles.textbuttons}>رسوم دعابة خير</Text>
+              <Text style={styles.textbuttons}>خيارات إضافية</Text>
             </TouchableOpacity>
             <View
               style={{
@@ -46,10 +46,7 @@ const SixteenScreen = ({ navigation }) => {
             >
               <View style={styles.cardDiv}>
                 <Image
-                  source={{
-                    uri:
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR4YmY0l7aI7LXYUZ4aesrH0rekeeUuvnwmkw&usqp=CAU",
-                  }}
+                  source={require("../assets/sixteen1.png")}
                   style={{ height: 80, width: 80 }}
                 />
                 <Text
@@ -60,26 +57,23 @@ const SixteenScreen = ({ navigation }) => {
                     marginTop: 10,
                   }}
                 >
-                  ادفلة
+                  لحم مفروم
                 </Text>
                 <TouchableOpacity style={styles.cardButton}>
                   <Text
-                    style={{ color: "#fff", fontSize: 20, marginRight: 10 }}
+                    style={{ color: "#fff", fontSize: 15, alignSelf: "center" }}
                   >
-                    العزيز
+                    اختر الكمية
                   </Text>
-                  <View style={{ marginLeft: 10, marginTop: 5 }}>
-                    <AntDesign name="down" size={20} color="#fff" />
+                  <View style={{ alignSelf: "center" }}>
+                    <AntDesign name="down" size={15} color="#fff" />
                   </View>
                 </TouchableOpacity>
               </View>
               <View style={styles.cardDiv}>
                 <Image
-                  source={{
-                    uri:
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR0Ga2Ym9DJM0MlTHUHIKqxzskYyUhnQFVkKg&usqp=CAU",
-                  }}
-                  style={{ height: 80, width: 80 }}
+                  source={require("../assets/sixteen2.png")}
+                  style={{ height: 80, width: 80, resizeMode: "contain" }}
                 />
                 <Text
                   style={{
@@ -89,22 +83,22 @@ const SixteenScreen = ({ navigation }) => {
                     marginTop: 10,
                   }}
                 >
-                  ادفلة
+                  التغليف
                 </Text>
                 <TouchableOpacity style={styles.cardButton}>
                   <Text
-                    style={{ color: "#fff", fontSize: 20, marginRight: 10 }}
+                    style={{ color: "#fff", fontSize: 15, alignSelf: "center" }}
                   >
-                    العزيز
+                    اختر الطريقة
                   </Text>
-                  <View style={{ marginLeft: 10, marginTop: 5 }}>
-                    <AntDesign name="down" size={20} color="#fff" />
+                  <View style={{ alignSelf: "center" }}>
+                    <AntDesign name="down" size={15} color="#fff" />
                   </View>
                 </TouchableOpacity>
               </View>
             </View>
             <View style={styles.InputListmainDiv}>
-              <Text style={{ fontSize: 20, color: "#fff" }}>دعابة خير</Text>
+              <Text style={{ fontSize: 20, color: "#fff" }}> ملاحظات</Text>
               <ShadowCard radius={15}>
                 <TextInput
                   style={{
@@ -136,7 +130,7 @@ const SixteenScreen = ({ navigation }) => {
                     color: "#fff",
                   }}
                 >
-                  الموسية موسى:
+                  المجموع الكلي:
                 </Text>
               </ShadowCard>
               <ShadowCard
@@ -152,7 +146,7 @@ const SixteenScreen = ({ navigation }) => {
                     color: "#fff",
                   }}
                 >
-                  ادفلة موسىلموسية
+                  اضف للسلة واختر منتج آخر
                 </Text>
               </ShadowCard>
               <View style={{ alignItems: "center" }}>
@@ -171,7 +165,7 @@ const SixteenScreen = ({ navigation }) => {
                       color: "#fff",
                     }}
                   >
-                    ادفلموسية
+                    إتما معملية الشراء
                   </Text>
                 </ShadowCard>
               </View>
@@ -213,14 +207,17 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 3,
     alignItems: "center",
-    paddingBottom: 10,
+
+    paddingVertical: 10,
   },
   cardButton: {
-    paddingHorizontal: 15,
+    //paddingHorizontal: 15,
+    width: "65%",
     borderRadius: 20,
+    paddingVertical: 6,
     backgroundColor: "#db2539",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
   },
   InputListmainDiv: {
     marginTop: 20,

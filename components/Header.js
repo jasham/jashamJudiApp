@@ -14,7 +14,9 @@ import {
 } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 export default function Header(props) {
+  const navigation = useNavigation();
   const DATA = ["الكل", "سوبر ماركت", "حلقة الخضار", "سوق السمك"];
   return (
     <LinearGradient
@@ -35,15 +37,15 @@ export default function Header(props) {
           </TouchableOpacity>
           <TouchableOpacity style={styles.Icon}>
             <FontAwesome5 name="hotel" size={35} color="#fff" />
-            <Text style={styles.Text}>البحص</Text>
+            <Text style={styles.Text}>المتاجر</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.Icon}>
             <FontAwesome5 name="home" size={35} color="#fff" />
-            <Text style={styles.Text}>البحص</Text>
+            <Text style={styles.Text}>الرئيسية</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.Icon}>
             <Feather name="shopping-bag" size={35} color="#fff" />
-            <Text style={styles.Text}>البحص</Text>
+            <Text style={styles.Text}>سلتي</Text>
             <MaterialIcons
               name="error"
               size={20}
@@ -51,13 +53,17 @@ export default function Header(props) {
               style={{ position: "absolute", right: 5 }}
             />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.Icon}>
+          <TouchableOpacity
+            onPress={() => navigation.openDrawer()}
+            style={styles.Icon}
+          >
             <Ionicons name="ios-menu" size={50} color="#fff" />
           </TouchableOpacity>
         </View>
 
         <FlatList
           horizontal
+          inverted
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item, index) => index.toString()}
           data={DATA}
