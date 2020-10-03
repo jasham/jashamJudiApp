@@ -4,6 +4,7 @@ import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import Header from "../components/Header";
 import { LinearGradient } from "expo-linear-gradient";
 import { GradientColors } from "../components/LinearGradient";
+import { ScrollView } from "react-native-gesture-handler";
 
 const SecondScreen = ({ navigation }) => {
   return (
@@ -38,33 +39,35 @@ const SecondScreen = ({ navigation }) => {
           </View>
         </LinearGradient>
         <LinearGradient
-          colors={["#DE2E3B", "#E64440", "#EF5F46"]}
+          colors={GradientColors.FirstScreen}
           style={styles.Button}
         >
           <Text style={styles.BtnText}>المفضلة</Text>
           <AntDesign name="hearto" size={30} color="#fff" />
         </LinearGradient>
       </TouchableOpacity>
-      <View style={styles.LargeBtnWrapper}>
-        <LinearGradient
-          style={styles.LargeBtn}
-          colors={GradientColors.SecondScreen}
-        >
-          <Text style={{ fontSize: 30, color: "#fff" }}>سوبر مارکت</Text>
-        </LinearGradient>
-        <LinearGradient
-          style={styles.LargeBtn}
-          colors={GradientColors.SecondScreen}
-        >
-          <Text style={{ fontSize: 30, color: "#fff" }}>ہابیر مارکت</Text>
-        </LinearGradient>
-        <LinearGradient
-          style={styles.LargeBtn}
-          colors={GradientColors.SecondScreen}
-        >
-          <Text style={{ fontSize: 30, color: "#fff" }}>مینی مارکت </Text>
-        </LinearGradient>
-      </View>
+      <ScrollView style={{ flex: 1, width: "100%" }}>
+        <View style={styles.LargeBtnWrapper}>
+          <LinearGradient
+            style={styles.LargeBtn}
+            colors={GradientColors.SecondScreen}
+          >
+            <Text style={{ fontSize: 30, color: "#fff" }}>سوبر مارکت</Text>
+          </LinearGradient>
+          <LinearGradient
+            style={styles.LargeBtn}
+            colors={GradientColors.SecondScreen}
+          >
+            <Text style={{ fontSize: 30, color: "#fff" }}> هايبر ماركت</Text>
+          </LinearGradient>
+          <LinearGradient
+            style={styles.LargeBtn}
+            colors={GradientColors.SecondScreen}
+          >
+            <Text style={{ fontSize: 30, color: "#fff" }}>ميني مارکت </Text>
+          </LinearGradient>
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -97,10 +100,10 @@ const styles = StyleSheet.create({
   },
   LargeBtnWrapper: {
     width: "100%",
-    flexDirection: "column",
+    flex: 1,
     paddingHorizontal: 10,
     marginTop: 17,
-    height: "50%",
+
     justifyContent: "space-around",
     paddingHorizontal: 50,
   },
@@ -108,7 +111,8 @@ const styles = StyleSheet.create({
     height: 80,
     borderRadius: 20,
     alignItems: "center",
-    flexDirection: "row",
+    marginBottom: 17,
+    // flexDirection: "row",
     justifyContent: "center",
   },
 });

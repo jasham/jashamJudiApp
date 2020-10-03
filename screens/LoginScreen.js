@@ -49,7 +49,7 @@ export default function LoginScreen({ navigation }) {
               }}
             >
               <TextInput
-                style={{ paddingHorizontal: 10 }}
+                style={{ paddingHorizontal: 10, textAlign: "right" }}
                 value={phoneNumber}
                 onChangeText={(text) => setphoneNumber(text)}
                 keyboardType="number-pad"

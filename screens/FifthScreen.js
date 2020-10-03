@@ -16,7 +16,44 @@ import { LinearGradient } from "expo-linear-gradient";
 import { GradientColors } from "../components/LinearGradient";
 
 const FifthScreen = ({ navigation }) => {
-  const DATA = ["آنانس", "آنانس", "آنانس", "آنانس", "آنانس", "آنانس"];
+  const DATA = [
+    {
+      title: "أناناس",
+      color: "#EB6C60",
+      imageUrl:
+        "https://i2.pickpik.com/photos/209/158/500/fruit-pineapple-cross-section-preview.jpg",
+    },
+    {
+      title: "أناناس",
+      color: "#EB6C60",
+      imageUrl:
+        "https://i2.pickpik.com/photos/209/158/500/fruit-pineapple-cross-section-preview.jpg",
+    },
+    {
+      title: "ليمون",
+      color: "#DB2539",
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSyuiW19v0kRyJN-CImP8b2UkY1eEYRtIsVzQ&usqp=CAU",
+    },
+    {
+      title: "ليمون",
+      color: "#DB2539",
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSyuiW19v0kRyJN-CImP8b2UkY1eEYRtIsVzQ&usqp=CAU",
+    },
+    {
+      title: "أناناس",
+      color: "#EB6C60",
+      imageUrl:
+        "https://i2.pickpik.com/photos/209/158/500/fruit-pineapple-cross-section-preview.jpg",
+    },
+    {
+      title: "أناناس",
+      color: "#EB6C60",
+      imageUrl:
+        "https://i2.pickpik.com/photos/209/158/500/fruit-pineapple-cross-section-preview.jpg",
+    },
+  ];
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
@@ -83,20 +120,19 @@ const FifthScreen = ({ navigation }) => {
                   <Image
                     style={{ width: 100, height: 100 }}
                     source={{
-                      uri:
-                        "https://img.freepik.com/free-photo/lemon-with-leaves-white-background_73289-47.jpg?size=338&ext=jpg",
+                      uri: item.imageUrl,
                     }}
                   />
 
                   <Text
                     style={{
                       fontSize: 30,
-                      color: "orange",
+                      color: item.color,
                       alignSelf: "flex-end",
                       marginRight: 5,
                     }}
                   >
-                    {item}
+                    {item.title}
                   </Text>
                 </View>
               );

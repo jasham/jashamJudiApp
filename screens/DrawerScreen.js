@@ -25,8 +25,8 @@ export function DrawerContentScreen(props) {
             }}
           >
             <View style={{ marginLeft: 10 }}>
-              <Text style={{ fontSize: 20 }}>ادفلةعرض نواز</Text>
-              <Text>mohammed80@gmail.com</Text>
+              <Text style={{ fontSize: 20 }}>محمد أحمد سعيد</Text>
+              <Text>mohammed@gmail.com</Text>
             </View>
             <View style={{ marginRight: 8 }}>
               <Image
@@ -41,41 +41,41 @@ export function DrawerContentScreen(props) {
           <View style={{ flex: 1, alignItems: "center" }}>
             <TouchableOpacity style={styles.firstBtn}>
               <Text style={{ fontSize: 20, fontWeight: "bold", color: "#fff" }}>
-                حسابية
+                حسابي
               </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.mainList}>
             <TouchableOpacity style={styles.listbt}>
               <Text style={{ color: "#fff", fontSize: 20, fontWeight: "bold" }}>
-                عنصر هارديشت
+                أحدث المنتجات
               </Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.listbt2}>
               <Text style={{ color: "#fff", fontSize: 20, fontWeight: "bold" }}>
-                طيب ولا سنسار
+                الفواكه والخضار
               </Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.listbt}>
               <Text style={{ color: "#fff", fontSize: 20, fontWeight: "bold" }}>
-                أمي توماكي ماري
+                الصحة
               </Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.listbt2}>
               <Text style={{ color: "#fff", fontSize: 20, fontWeight: "bold" }}>
-                عنصر هارديشت
+                المشروبات
               </Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.listbt}>
               <Text style={{ color: "#fff", fontSize: 20, fontWeight: "bold" }}>
-                أمي توماكي ماري
+                المخبوزات
               </Text>
             </TouchableOpacity>
           </View>
           <View style={{ alignItems: "center", flex: 1 }}>
             <TouchableOpacity style={styles.bottomtBtn}>
               <Text style={{ fontSize: 20, fontWeight: "bold", color: "#fff" }}>
-                حسابية
+                تسجيل الخروج
               </Text>
             </TouchableOpacity>
           </View>

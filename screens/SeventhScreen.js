@@ -17,22 +17,25 @@ const SeventhScreen = ({ navigation }) => {
     {
       title: "الحجم",
       imageUrl: require("../assets/seventh1.png"),
-      btnText: "v " + "(٩٥.)صغير",
+      btnText: "صغير(.٩٥)",
+      symbol: "v",
     },
     {
       title: "التقطيع",
       imageUrl: require("../assets/seventh2.png"),
       btnText: "ثلاجة",
+      symbol: "v",
     },
     {
       title: "الكمية",
       imageUrl: require("../assets/seventh3.png"),
-      btnText: "-    1     +",
+      btnText: "-         1        +",
     },
     {
       title: "السعر",
       imageUrl: require("../assets/seventh4.png"),
       btnText: "ريال",
+      symbol: "(٩٥.)",
     },
   ];
   return (
@@ -124,7 +127,8 @@ const SeventhScreen = ({ navigation }) => {
                         // backgroundColor: "red",
                         width: 130,
                         height: 40,
-                        justifyContent: "center",
+                        justifyContent: "space-around",
+                        flexDirection: "row",
                         alignItems: "center",
                         borderRadius: 20,
                       }}
@@ -132,6 +136,10 @@ const SeventhScreen = ({ navigation }) => {
                       <Text style={{ color: "#fff", fontSize: 20 }}>
                         {" "}
                         {item.btnText}
+                      </Text>
+                      <Text style={{ color: "#fff", fontSize: 20 }}>
+                        {" "}
+                        {item.symbol}
                       </Text>
                     </TouchableOpacity>
                   </LinearGradient>

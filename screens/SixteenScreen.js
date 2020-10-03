@@ -99,12 +99,13 @@ const SixteenScreen = ({ navigation }) => {
             </View>
             <View style={styles.InputListmainDiv}>
               <Text style={{ fontSize: 20, color: "#fff" }}> ملاحظات</Text>
-              <ShadowCard radius={15}>
+              <ShadowCard noPad radius={15}>
                 <TextInput
                   style={{
                     textAlign: "right",
                     paddingHorizontal: 10,
-                    paddingVertical: 6,
+                    paddingVertical: 13,
+                    fontSize: 20,
                     width: "100%",
                   }}
                 />

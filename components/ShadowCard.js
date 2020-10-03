@@ -9,7 +9,7 @@ export const ShadowCard = (props) => {
           ? props.backgroundColor
           : "white",
         borderRadius: props.radius ? props.radius : 4,
-        padding: 15,
+        padding: props.noPad ? 0 : 15,
         paddingVertical: props.pVertical,
         flexDirection: props.flexDirection ? props.flexDirection : "column",
         justifyContent: props.justifyContent ? props.justifyContent : null,
