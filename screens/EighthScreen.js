@@ -76,30 +76,29 @@ const EighthScreen = ({ navigation }) => {
             renderItem={({ item, index }) => {
               return (
                 <View style={styles.LargeBtn}>
-                  <AntDesign
-                    name="hearto"
-                    size={20}
-                    color="black"
-                    style={{ alignSelf: "flex-start", marginLeft: 5 }}
-                  />
                   <Image
-                    style={{ width: 140, height: 90 }}
+                    style={{
+                      width: "100%",
+                      height: 120,
+                      resizeMode: "cover",
+                    }}
                     source={{
                       uri:
-                        "https://cdn.pixabay.com/photo/2017/10/01/23/37/sheep-2807430__340.jpg",
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1U42w-_Z40ptozuxCyuNg85aeDdkrZxLLCw&usqp=CAU",
                     }}
                   />
-
-                  <Text
-                    style={{
-                      fontSize: 30,
-                      color: "orange",
-                      alignSelf: "flex-end",
-                      marginRight: 5,
-                    }}
-                  >
-                    {item}
-                  </Text>
+                  <View style={{ backgroundColor: "maroon", width: "100%" }}>
+                    <Text
+                      style={{
+                        fontSize: 15,
+                        color: "white",
+                        alignSelf: "center",
+                        //   marginRight: 5,
+                      }}
+                    >
+                      {item}
+                    </Text>
+                  </View>
                 </View>
               );
             }}
@@ -142,9 +141,9 @@ const styles = StyleSheet.create({
   LargeBtn: {
     minHeight: 170,
     width: "40%",
-    marginBottom: 20,
-    paddingBottom: 10,
-    backgroundColor: "#fff",
+    //marginBottom: 20,
+    backgroundColor: "transparent",
+    //backgroundColor: "yellow",
     borderRadius: 10,
     elevation: 12,
     shadowOffset: { width: 4, height: 5 },

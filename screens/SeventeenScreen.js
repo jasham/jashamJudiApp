@@ -1,41 +1,101 @@
 import React from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  ScrollView,
+} from "react-native";
+
+import { LinearGradient } from "expo-linear-gradient";
 import Header from "../components/Header";
 import { GradientColors } from "../components/LinearGradient";
-const SeventeenScreen = ({ navigation }) => {
+
+const SeventeenScreen = (props) => {
+  const DATA = [
+    "تم توصيل طلبك",
+    "طلبك في الطريق ",
+    " يتم تجهيز طلبك",
+    "المندوب في الطريق للمتجر ",
+  ];
   return (
-    <View style={styles.container}>
+    <View style={{ flex: 1, backgroundColor: "#ededed" }}>
       <Header colors={GradientColors.FirstScreen} />
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text style={{ fontSize: 25 }}>تمت عملية الدفع بنجاح!</Text>
-        <TouchableOpacity
+      <ScrollView style={{ flex: 1, width: "100%" }}>
+        <View
           style={{
-            backgroundColor: "#db2539",
-            paddingHorizontal: 10,
-            paddingVertical: 5,
-            borderRadius: 4,
-            marginTop: 10,
-            shadowColor: "black",
-            shadowOffset: { width: 4, height: 5 },
-            elevation: 8,
-            shadowRadius: 4,
+            width: "100%",
+
+            // height: "50%",
+            alignSelf: "center",
+            marginTop: 35,
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <Text style={{ color: "white", fontSize: 20 }}>تتبع مشترياتي</Text>
+          <Image
+            style={{
+              width: "85%",
+              // height: "100%",
+              resizeMode: "cover",
+            }}
+            source={require("../assets/14thmap.png")}
+          />
+        </View>
+        <View style={{ width: "85%", alignSelf: "center" }}>
+          <FlatList
+            horizontal
+            keyExtractor={(item, index) => index.toString()}
+            data={DATA}
+            renderItem={({ item, index }) => {
+              return (
+                <TouchableOpacity
+                  // onPress={() => props.navigation.navigate("Sixteen")}
+                  style={{
+                    backgroundColor: "#fff",
+                    borderRadius: 10,
+                    elevation: props.elevation ? props.elevation : 5,
+                    shadowOffset: { width: 4, height: 5 },
+                    shadowOpacity: 0.3,
+                    shadowRadius: 5,
+                    maxWidth: 100,
+                    // height: 50,
+                    paddingHorizontal: 10,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginTop: 20,
+                    marginRight: 5,
+                    paddingVertical: 10,
+                    marginBottom: 20,
+                  }}
+                >
+                  <Text style={{ fontSize: 12 }}>{item}</Text>
+                </TouchableOpacity>
+              );
+            }}
+          />
+        </View>
+        <TouchableOpacity style={{ width: "70%", alignSelf: "center" }}>
+          <LinearGradient
+            style={{
+              width: "100%",
+              alignSelf: "center",
+              paddingVertical: 10,
+              borderRadius: 7,
+              marginBottom: 20,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            colors={GradientColors.FirstScreen}
+          >
+            <Text style={{ fontSize: 20, color: "#fff" }}> استلمت طلبي </Text>
+          </LinearGradient>
         </TouchableOpacity>
-      </View>
+      </ScrollView>
     </View>
   );
 };
 
 export default SeventeenScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    flex: 1,
-    width: "100%",
-    backgroundColor: "#ededed",
-    alignSelf: "center",
-  },
-});

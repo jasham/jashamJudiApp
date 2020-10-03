@@ -16,24 +16,39 @@ import { GradientColors } from "../components/LinearGradient";
 const TwelveScreen = ({ navigation }) => {
   const DATA = [
     {
+      title: "كابوريا",
       imageUrl:
         "https://upload.wikimedia.org/wikipedia/commons/1/12/Liocarcinus_vernalis.jpg",
       color: "orange",
     },
     {
+      title: "سمك سردين",
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYaXcdJX2V_zyBlKrt_AJYWQzWM8VpIHNN1Q&usqp=CAU",
+      color: "lightgreen",
+    },
+    {
+      title: "كابوريا",
+      imageUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/1/12/Liocarcinus_vernalis.jpg",
+      color: "orange",
+    },
+    {
+      title: "استاكوزا",
       imageUrl:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYaXcdJX2V_zyBlKrt_AJYWQzWM8VpIHNN1Q&usqp=CAU",
       color: "red",
     },
     {
-      imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZsdwN7iyh2jjJOAxxwCI1wzTttUhfFMtdaA&usqp=CAU",
-      color: "green",
-    },
-
-    {
+      title: "استاكوزا",
       imageUrl:
         "https://snappygoat.com/b/fbf29a74883b71582001fd8fb889c92cbd1e017a",
+      color: "red",
+    },
+    {
+      title: "جمبري",
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZsdwN7iyh2jjJOAxxwCI1wzTttUhfFMtdaA&usqp=CAU",
       color: "orange",
     },
   ];
@@ -52,7 +67,7 @@ const TwelveScreen = ({ navigation }) => {
           >
             <LinearGradient
               style={{ ...styles.Button, width: "100%" }}
-              colors={GradientColors.PercentButton}
+              colors={GradientColors.FirstScreen}
             >
               <Text style={styles.BtnText}>العروض</Text>
               <View
@@ -81,7 +96,7 @@ const TwelveScreen = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity style={{ width: "40%" }}>
             <LinearGradient
-              colors={GradientColors.PercentButton}
+              colors={GradientColors.FirstScreen}
               style={{ ...styles.Button, width: "100%" }}
             >
               <Text style={styles.BtnText}>المفضلة</Text>
@@ -98,84 +113,26 @@ const TwelveScreen = ({ navigation }) => {
             renderItem={({ item, index }) => {
               return (
                 <View style={styles.LargeBtn}>
-                  <View
+                  <Image
                     style={{
-                      flexDirection: "row",
-                      justifyContent: "space-between",
                       width: "100%",
+                      height: 120,
+                      resizeMode: "cover",
                     }}
-                  >
-                    <AntDesign
-                      name="hearto"
-                      size={20}
-                      color="black"
-                      style={{
-                        alignSelf: "flex-start",
-                        marginLeft: 10,
-                        marginTop: 5,
-                      }}
-                    />
-
+                    source={{ uri: item.imageUrl }}
+                  />
+                  <View style={{ backgroundColor: item.color, width: "100%" }}>
                     <Text
                       style={{
-                        fontSize: 20,
-                        color: item.color,
-                        alignSelf: "flex-end",
-                        marginRight: 5,
+                        fontSize: 15,
+                        color: "white",
+                        alignSelf: "center",
+                        //   marginRight: 5,
                       }}
                     >
-                      هامور كشر
+                      {item.title}
                     </Text>
                   </View>
-
-                  <Image
-                    style={{ width: 100, height: 100, resizeMode: "contain" }}
-                    source={{
-                      uri:
-                        "https://upload.wikimedia.org/wikipedia/commons/0/03/Illustration_from_The_Natural_History_of_British_Fishes_%281802%29_by_Edward_Donovan%2C_digitally_enhanced_by_rawpixel-com_12.jpg",
-                    }}
-                  />
-                  <LinearGradient
-                    colors={GradientColors.SecondScreen}
-                    style={{ borderRadius: 30, marginBottom: 5 }}
-                  >
-                    <TouchableOpacity
-                      style={{
-                        // backgroundColor: "red",
-                        width: 130,
-                        //height: 40,
-                        justifyContent: "center",
-                        alignItems: "center",
-                        borderRadius: 20,
-                      }}
-                    >
-                      <Text style={{ color: "#fff", fontSize: 20 }}>
-                        {" "}
-                        ٥ريال{"   "} كيلو
-                      </Text>
-                    </TouchableOpacity>
-                  </LinearGradient>
-                  <LinearGradient
-                    colors={GradientColors.PercentButton}
-                    style={{ borderRadius: 30 }}
-                  >
-                    <TouchableOpacity
-                      style={{
-                        // backgroundColor: "red",
-                        width: 130,
-                        //height: 40,
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        flexDirection: "row",
-                        borderRadius: 20,
-                        paddingHorizontal: 10,
-                      }}
-                    >
-                      <Text style={{ color: "white", fontSize: 20 }}>-</Text>
-                      <Text style={{ color: "white", fontSize: 20 }}>1</Text>
-                      <Text style={{ color: "white", fontSize: 20 }}>+</Text>
-                    </TouchableOpacity>
-                  </LinearGradient>
                 </View>
               );
             }}
@@ -218,10 +175,9 @@ const styles = StyleSheet.create({
   LargeBtn: {
     minHeight: 170,
     width: "40%",
-    marginBottom: 20,
-    paddingBottom: 10,
-    //backgroundColor: "transparent",
-    backgroundColor: "white",
+    //marginBottom: 20,
+    backgroundColor: "transparent",
+    //backgroundColor: "yellow",
     borderRadius: 10,
     elevation: 12,
     shadowOffset: { width: 4, height: 5 },

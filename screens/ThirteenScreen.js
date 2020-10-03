@@ -1,300 +1,233 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity,
-  ScrollView,
-  CheckBox,
   Image,
-  TextInput,
+  TouchableOpacity,
+  ImageBackground,
+  FlatList,
 } from "react-native";
-import Header from "../components/Header";
-import { GradientColors } from "../components/LinearGradient";
-import { ShadowCard } from "../components/ShadowCard";
+import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
+import TransparentHeader from "../components/TransparentHeader";
 import { LinearGradient } from "expo-linear-gradient";
+import { GradientColors } from "../components/LinearGradient";
 
-const CardComponent = ({ navigation }) => {
-  const [isSelected, setSelection] = useState(false);
+const ThirteenScreen = ({ navigation }) => {
+  const DATA = [
+    {
+      imageUrl:
+        "https://upload.wikimedia.org/wikipedia/commons/1/12/Liocarcinus_vernalis.jpg",
+      color: "orange",
+    },
+    {
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYaXcdJX2V_zyBlKrt_AJYWQzWM8VpIHNN1Q&usqp=CAU",
+      color: "red",
+    },
+    {
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZsdwN7iyh2jjJOAxxwCI1wzTttUhfFMtdaA&usqp=CAU",
+      color: "green",
+    },
+
+    {
+      imageUrl:
+        "https://snappygoat.com/b/fbf29a74883b71582001fd8fb889c92cbd1e017a",
+      color: "orange",
+    },
+  ];
   return (
-    <>
-      <Header colors={GradientColors.FirstScreen} />
-      <ScrollView style={{ flex: 1 }}>
-        <View style={styles.main}>
-          <TouchableOpacity onPress={() => navigation.navigate("Fourteen")}>
+    <View style={{ flex: 1 }}>
+      <ImageBackground
+        style={{ flex: 1 }}
+        resizeMode="cover"
+        source={require("../assets/blue.jpg")}
+      >
+        <TransparentHeader />
+        <View style={styles.ButtonWrapper}>
+          <TouchableOpacity
+            style={{ width: "40%" }}
+            onPress={() => navigation.navigate("Fourteen")}
+          >
             <LinearGradient
-              colors={GradientColors.SecondScreen}
-              style={styles.buttonStyle}
+              style={{ ...styles.Button, width: "100%" }}
+              colors={GradientColors.PercentButton}
             >
-              <Text
-                style={{ textAlign: "center", color: "#fff", fontSize: 25 }}
-              >
-                عنوا ن التوصيل
-              </Text>
-            </LinearGradient>
-          </TouchableOpacity>
-          <View style={styles.mainWrapper}>
-            <Text
-              style={{
-                marginTop: 10,
-                color: "#1A1A1C",
-                fontSize: 16,
-              }}
-            >
-              عناوين التوصيل
-            </Text>
-            <View style={styles.radiodiv}>
-              <Text
-                style={{ fontSize: 16, fontWeight: "bold", color: "#1A1A1C" }}
-              >
-                مستشفى الملك عبد العزيز
-              </Text>
-
-              <CheckBox value={isSelected} onValueChange={setSelection} />
-            </View>
-            <View style={styles.textButtondiv}>
-              <Text style={styles.textButtonstyle}>تاديل أنوان</Text>
-              <Text style={styles.textButtonstyle}>إضافة عنوان</Text>
-            </View>
-            <View style={{ alignItems: "center" }}>
-              {/* <TouchableOpacity style={styles.nextbuttonStyle}>
-                <Text
-                  style={{ textAlign: "center", color: "#fff", fontSize: 25 }}
-                >
-                  النواسية
-                </Text>
-              </TouchableOpacity> */}
-              <TouchableOpacity>
-                <LinearGradient
-                  colors={GradientColors.SecondScreen}
-                  style={styles.buttonStyle}
-                >
-                  <Text
-                    style={{ textAlign: "center", color: "#fff", fontSize: 25 }}
-                  >
-                    طرق الدفع
-                  </Text>
-                </LinearGradient>
-              </TouchableOpacity>
-            </View>
-            <View>
+              <Text style={styles.BtnText}>العروض</Text>
               <View
                 style={{
-                  flexDirection: "row",
-                  marginTop: 20,
-                  justifyContent: "space-between",
+                  width: 33,
+                  height: 33,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: 33 / 2,
+                  borderWidth: 1.4,
+                  border: "solid red",
+                  borderColor: "#fff",
                 }}
               >
-                <View style={styles.imagediv}>
-                  <Image
-                    source={{
-                      uri:
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlVGf08pz-EprSZ2udOC3EuPE0nJTsanR1jA&usqp=CAU",
-                    }}
-                    style={{
-                      width: 70,
-                      height: 60,
-                      resizeMode: "cover",
-                      alignSelf: "center",
-                    }}
-                  />
-                </View>
-                <View style={styles.imagediv}>
-                  <Image
-                    source={{
-                      uri:
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7_bZBebD96r6kUHFpAYur-xMWCl-DRQVPSQ&usqp=CAU",
-                    }}
-                    style={{
-                      width: 70,
-                      height: 60,
-                      resizeMode: "cover",
-                      alignSelf: "center",
-                    }}
-                  />
-                </View>
-                <View style={styles.imagediv}>
-                  <Image
-                    source={{
-                      uri:
-                        "https://i0.wp.com/www.ecommerce-nation.com/wp-content/uploads/2018/01/paypal.png?fit=1000%2C600&ssl=1",
-                    }}
-                    style={{
-                      width: 70,
-                      height: 60,
-                      resizeMode: "cover",
-                      alignSelf: "center",
-                    }}
-                  />
-                </View>
+                <Text
+                  style={{
+                    color: "rgba(0,0,0,0.4)",
+                    fontSize: 22,
+                    color: "#fff",
+                  }}
+                >
+                  <FontAwesome5 name="percent" size={17} color="#fff" />
+                </Text>
               </View>
-              <View>
-                <View
-                  style={{
-                    marginTop: 20,
-                  }}
-                >
-                  <Text style={{ fontSize: 16, color: "#39383C" }}>
-                    رقم البطاقة
-                  </Text>
-                </View>
-                <ShadowCard mTop={5}>
-                  <TextInput
-                    placeholder=" رقم البطاقة "
-                    style={{ textAlign: "right" }}
-                  />
-                </ShadowCard>
-                <View
-                  style={{
-                    marginTop: 15,
-                  }}
-                >
-                  <Text style={{ fontSize: 16, color: "#39383C" }}>
-                    الاسم في البطاقة
-                  </Text>
-                </View>
-                <ShadowCard mTop={5}>
-                  <TextInput
-                    placeholder=" الاسم في البطاقة"
-                    style={{ textAlign: "right" }}
-                  />
-                </ShadowCard>
-
-                <View style={{ width: "100%" }}>
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      color: "#39383C",
-                      textAlign: "right",
-                      marginTop: 10,
-                    }}
-                  >
-                    تاريخ الانتهاء
-                  </Text>
+            </LinearGradient>
+          </TouchableOpacity>
+          <TouchableOpacity style={{ width: "40%" }}>
+            <LinearGradient
+              colors={GradientColors.PercentButton}
+              style={{ ...styles.Button, width: "100%" }}
+            >
+              <Text style={styles.BtnText}>المفضلة</Text>
+              <AntDesign name="hearto" size={30} color="#fff" />
+            </LinearGradient>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.LargeBtnWrapper}>
+          <FlatList
+            numColumns={2}
+            columnWrapperStyle={{ justifyContent: "space-evenly" }}
+            keyExtractor={(item, index) => index.toString()}
+            data={DATA}
+            renderItem={({ item, index }) => {
+              return (
+                <View style={styles.LargeBtn}>
                   <View
                     style={{
                       flexDirection: "row",
                       justifyContent: "space-between",
-                    }}
-                  >
-                    <ShadowCard mTop={6} width="40%">
-                      <TextInput placeholder="CVV" />
-                    </ShadowCard>
-                    <ShadowCard mTop={6} width="58%">
-                      <TextInput placeholder="MMYY" />
-                    </ShadowCard>
-                  </View>
-                </View>
-                <TouchableOpacity style={styles.bottombtn}>
-                  <LinearGradient
-                    style={{
                       width: "100%",
-                      paddingVertical: 10,
-                      borderRadius: 10,
                     }}
-                    colors={GradientColors.FirstScreen}
                   >
+                    <AntDesign
+                      name="hearto"
+                      size={20}
+                      color="black"
+                      style={{
+                        alignSelf: "flex-start",
+                        marginLeft: 10,
+                        marginTop: 5,
+                      }}
+                    />
+
                     <Text
                       style={{
-                        color: "white",
-                        fontSize: 25,
-                        textAlign: "center",
+                        fontSize: 20,
+                        color: item.color,
+                        alignSelf: "flex-end",
+                        marginRight: 5,
                       }}
                     >
-                      ادفع الآن
+                      هامور كشر
                     </Text>
+                  </View>
+
+                  <Image
+                    style={{ width: 100, height: 100, resizeMode: "contain" }}
+                    source={{
+                      uri:
+                        "https://upload.wikimedia.org/wikipedia/commons/0/03/Illustration_from_The_Natural_History_of_British_Fishes_%281802%29_by_Edward_Donovan%2C_digitally_enhanced_by_rawpixel-com_12.jpg",
+                    }}
+                  />
+                  <LinearGradient
+                    colors={GradientColors.SecondScreen}
+                    style={{ borderRadius: 30, marginBottom: 5 }}
+                  >
+                    <TouchableOpacity
+                      style={{
+                        // backgroundColor: "red",
+                        width: 130,
+                        //height: 40,
+                        justifyContent: "center",
+                        alignItems: "center",
+                        borderRadius: 20,
+                      }}
+                    >
+                      <Text style={{ color: "#fff", fontSize: 20 }}>
+                        {" "}
+                        ٥ريال{"   "} كيلو
+                      </Text>
+                    </TouchableOpacity>
                   </LinearGradient>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
+                  <LinearGradient
+                    colors={GradientColors.PercentButton}
+                    style={{ borderRadius: 30 }}
+                  >
+                    <TouchableOpacity
+                      style={{
+                        // backgroundColor: "red",
+                        width: 130,
+                        //height: 40,
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        flexDirection: "row",
+                        borderRadius: 20,
+                        paddingHorizontal: 10,
+                      }}
+                    >
+                      <Text style={{ color: "white", fontSize: 20 }}>-</Text>
+                      <Text style={{ color: "white", fontSize: 20 }}>1</Text>
+                      <Text style={{ color: "white", fontSize: 20 }}>+</Text>
+                    </TouchableOpacity>
+                  </LinearGradient>
+                </View>
+              );
+            }}
+          />
         </View>
-      </ScrollView>
-    </>
+      </ImageBackground>
+    </View>
   );
 };
 
-export default CardComponent;
+export default ThirteenScreen;
 
 const styles = StyleSheet.create({
-  main: {
-    // height: 90,
-    flex: 1,
+  ButtonWrapper: {
     width: "100%",
-    backgroundColor: "#ededed",
     alignItems: "center",
-  },
-  buttonStyle: {
-    justifyContent: "center",
-    paddingHorizontal: 50,
-    marginTop: 30,
-    padding: 10,
-    borderRadius: 10,
-  },
-  mainWrapper: {
-    width: "80%",
-    flex: 1,
-  },
-  radiodiv: {
-    width: "100%",
-    marginTop: 10,
-    backgroundColor: "#fff",
-    borderRadius: 5,
-    padding: 10,
-    elevation: 3,
-    alignItems: "center",
-    justifyContent: "flex-end",
     flexDirection: "row",
+    justifyContent: "space-around",
+    marginTop: 20,
   },
-  textButtondiv: {
-    height: 45,
-    width: "100%",
-    marginTop: 10,
-    borderRadius: 5,
-    flexDirection: "row",
+  Button: {
+    paddingVertical: 20,
+    justifyContent: "space-around",
     alignItems: "center",
-    justifyContent: "space-between",
+    flexDirection: "row",
+    borderRadius: 40,
+    paddingHorizontal: 10,
   },
-  textButtonstyle: {
-    backgroundColor: "#040537",
-    padding: 10,
-    width: "49%",
-    textAlign: "center",
-    borderRadius: 5,
-    color: "#fff",
+  BtnText: {
     fontSize: 20,
-    fontWeight: "bold",
-    elevation: 2,
+    color: "#fff",
   },
-  nextbuttonStyle: {
-    width: "60%",
-    backgroundColor: "#270B83",
-    justifyContent: "center",
-    marginTop: 30,
-    padding: 10,
-    borderRadius: 13,
+  LargeBtnWrapper: {
+    flex: 1,
+    alignSelf: "center",
+    width: "100%",
+
+    marginTop: 20,
   },
-  imagediv: {
-    width: "30%",
-    padding: 10,
-    backgroundColor: "#fff",
-    borderRadius: 10,
-    elevation: 3,
-  },
-  bottombtn: {
+  LargeBtn: {
+    minHeight: 170,
+    width: "40%",
     marginBottom: 20,
-    marginTop: 10,
-    justifyContent: "center",
-    alignItems: "center",
+    paddingBottom: 10,
+    //backgroundColor: "transparent",
+    backgroundColor: "white",
     borderRadius: 10,
-    //backgroundColor: "#E96E30",
-    minHeight: 50,
-    minWidth: 50,
-    borderRadius: 5,
-    elevation: 2,
-    shadowColor: "black",
+    elevation: 12,
     shadowOffset: { width: 4, height: 5 },
     shadowOpacity: 0.3,
     shadowRadius: 5,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

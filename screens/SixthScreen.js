@@ -15,7 +15,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { GradientColors } from "../components/LinearGradient";
 import { LinearGradient } from "react-native-svg";
 import TransparentHeader from "../components/TransparentHeader";
-const StrawberryScreen = ({ navigation }) => {
+const SixthScreen = ({ navigation }) => {
   return (
     <ImageBackground
       style={{ flex: 1 }}
@@ -84,7 +84,7 @@ const StrawberryScreen = ({ navigation }) => {
   );
 };
 
-export default StrawberryScreen;
+export default SixthScreen;
 
 const styles = StyleSheet.create({
   container: {

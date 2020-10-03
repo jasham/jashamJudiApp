@@ -46,12 +46,24 @@ export default function Header(props) {
           <TouchableOpacity style={styles.Icon}>
             <Feather name="shopping-bag" size={35} color="#fff" />
             <Text style={styles.Text}>سلتي</Text>
-            <MaterialIcons
-              name="error"
-              size={20}
-              color="red"
-              style={{ position: "absolute", right: 5 }}
-            />
+            <View
+              style={{
+                position: "absolute",
+                right: 2,
+                width: 18,
+                height: 18,
+                borderRadius: 18 / 2,
+                backgroundColor: "red",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={{ color: "white", fontSize: 10, textAlign: "center" }}
+              >
+                1
+              </Text>
+            </View>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.openDrawer()}

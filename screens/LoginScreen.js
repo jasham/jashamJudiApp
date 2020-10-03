@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
   ImageBackground,
+  KeyboardAvoidingView,
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 
@@ -31,33 +32,40 @@ export default function LoginScreen({ navigation }) {
           </View>
         </View>
         <View style={{ width: "60%" }}>
-          <View style={{ alignSelf: "flex-end", paddingBottom: 5 }}>
+          <View
+            style={{
+              alignSelf: "flex-end",
+              paddingBottom: 5,
+            }}
+          >
             <Text style={{ color: "white", marginRight: 20, fontSize: 25 }}>
               رقم الهاتف
             </Text>
           </View>
-          <View style={{ flexDirection: "row" }}>
-            <View
-              style={{
-                backgroundColor: "white",
-                borderColor: "white",
-                borderWidth: 0.5,
-                borderRadius: 8,
-                width: "93%",
-                marginBottom: 10,
-                paddingVertical: 10,
-              }}
-            >
-              <TextInput
-                style={{ paddingHorizontal: 10, textAlign: "right" }}
-                value={phoneNumber}
-                onChangeText={(text) => setphoneNumber(text)}
-                keyboardType="number-pad"
-                autoFocus
-              />
+          <KeyboardAvoidingView>
+            <View style={{ flexDirection: "row" }}>
+              <View
+                style={{
+                  backgroundColor: "white",
+                  borderColor: "white",
+                  borderWidth: 0.5,
+                  borderRadius: 8,
+                  width: "93%",
+                  marginBottom: 10,
+                  paddingVertical: 10,
+                }}
+              >
+                <TextInput
+                  style={{ paddingHorizontal: 10, textAlign: "right" }}
+                  value={phoneNumber}
+                  onChangeText={(text) => setphoneNumber(text)}
+                  keyboardType="number-pad"
+                  autoFocus
+                />
+              </View>
+              <Entypo name="mobile" size={40} color="white" />
             </View>
-            <Entypo name="mobile" size={40} color="white" />
-          </View>
+          </KeyboardAvoidingView>
         </View>
         <View>
           <TouchableOpacity

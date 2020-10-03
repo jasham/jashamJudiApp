@@ -3,187 +3,224 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
-  TouchableOpacity,
   ImageBackground,
-  FlatList,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+  TextInput,
 } from "react-native";
-import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import TransparentHeader from "../components/TransparentHeader";
-import { LinearGradient } from "expo-linear-gradient";
-import { GradientColors } from "../components/LinearGradient";
+import { AntDesign } from "@expo/vector-icons";
+import { ShadowCard } from "../components/ShadowCard";
 
 const TenthScreen = ({ navigation }) => {
-  const DATA = [
-    {
-      title: "كابوريا",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/1/12/Liocarcinus_vernalis.jpg",
-      color: "orange",
-    },
-    {
-      title: "سمك سردين",
-      imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYaXcdJX2V_zyBlKrt_AJYWQzWM8VpIHNN1Q&usqp=CAU",
-      color: "lightgreen",
-    },
-    {
-      title: "كابوريا",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/1/12/Liocarcinus_vernalis.jpg",
-      color: "orange",
-    },
-    {
-      title: "استاكوزا",
-      imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYaXcdJX2V_zyBlKrt_AJYWQzWM8VpIHNN1Q&usqp=CAU",
-      color: "red",
-    },
-    {
-      title: "استاكوزا",
-      imageUrl:
-        "https://snappygoat.com/b/fbf29a74883b71582001fd8fb889c92cbd1e017a",
-      color: "red",
-    },
-    {
-      title: "جمبري",
-      imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZsdwN7iyh2jjJOAxxwCI1wzTttUhfFMtdaA&usqp=CAU",
-      color: "orange",
-    },
-  ];
   return (
-    <View style={{ flex: 1 }}>
-      <ImageBackground
-        style={{ flex: 1 }}
-        resizeMode="cover"
-        source={require("../assets/blue.jpg")}
+    <ImageBackground
+      source={require("../assets/brown.jpg")}
+      style={{ flex: 1 }}
+    >
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+        }}
       >
         <TransparentHeader />
-        <View style={styles.ButtonWrapper}>
-          <TouchableOpacity
-            style={{ width: "40%" }}
-            onPress={() => navigation.navigate("Eleven")}
-          >
-            <LinearGradient
-              style={{ ...styles.Button, width: "100%" }}
-              colors={GradientColors.FirstScreen}
+        <View style={styles.main}>
+          <ScrollView style={{ flex: 1 }}>
+            <View style={{ alignItems: "flex-end" }}>
+              <AntDesign name="close" size={24} color="#db2539" />
+            </View>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Eleven")}
+              style={styles.buttonStyle}
             >
-              <Text style={styles.BtnText}>العروض</Text>
-              <View
-                style={{
-                  width: 33,
-                  height: 33,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: 33 / 2,
-                  borderWidth: 1.4,
-                  border: "solid red",
-                  borderColor: "#fff",
-                }}
+              <Text style={styles.textbuttons}>خيارات إضافية</Text>
+            </TouchableOpacity>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                //   paddingHorizontal: 10,
+              }}
+            >
+              <View style={styles.cardDiv}>
+                <Image
+                  source={require("../assets/sixteen1.png")}
+                  style={{ height: 80, width: 80 }}
+                />
+                <Text
+                  style={{
+                    fontSize: 20,
+                    fontWeight: "bold",
+                    color: "#db2539",
+                    marginTop: 10,
+                  }}
+                >
+                  لحم مفروم
+                </Text>
+                <TouchableOpacity style={styles.cardButton}>
+                  <Text
+                    style={{ color: "#fff", fontSize: 15, alignSelf: "center" }}
+                  >
+                    اختر الكمية
+                  </Text>
+                  <View style={{ alignSelf: "center" }}>
+                    <AntDesign name="down" size={15} color="#fff" />
+                  </View>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.cardDiv}>
+                <Image
+                  source={require("../assets/sixteen2.png")}
+                  style={{ height: 80, width: 80, resizeMode: "contain" }}
+                />
+                <Text
+                  style={{
+                    fontSize: 20,
+                    fontWeight: "bold",
+                    color: "#db2539",
+                    marginTop: 10,
+                  }}
+                >
+                  التغليف
+                </Text>
+                <TouchableOpacity style={styles.cardButton}>
+                  <Text
+                    style={{ color: "#fff", fontSize: 15, alignSelf: "center" }}
+                  >
+                    اختر الطريقة
+                  </Text>
+                  <View style={{ alignSelf: "center" }}>
+                    <AntDesign name="down" size={15} color="#fff" />
+                  </View>
+                </TouchableOpacity>
+              </View>
+            </View>
+            <View style={styles.InputListmainDiv}>
+              <Text style={{ fontSize: 20, color: "#fff" }}> ملاحظات</Text>
+              <ShadowCard noPad radius={15}>
+                <TextInput
+                  style={{
+                    textAlign: "right",
+                    paddingHorizontal: 10,
+                    paddingVertical: 13,
+                    fontSize: 20,
+                    width: "100%",
+                  }}
+                />
+              </ShadowCard>
+              <ShadowCard
+                radius={15}
+                mTop={20}
+                flexDirection={"row"}
+                justifyContent={"space-between"}
+                backgroundColor="#db2539"
               >
                 <Text
                   style={{
-                    color: "rgba(0,0,0,0.4)",
-                    fontSize: 22,
+                    fontSize: 20,
                     color: "#fff",
                   }}
                 >
-                  <FontAwesome5 name="percent" size={17} color="#fff" />
+                  ريال
                 </Text>
-              </View>
-            </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity style={{ width: "40%" }}>
-            <LinearGradient
-              colors={GradientColors.FirstScreen}
-              style={{ ...styles.Button, width: "100%" }}
-            >
-              <Text style={styles.BtnText}>المفضلة</Text>
-              <AntDesign name="hearto" size={30} color="#fff" />
-            </LinearGradient>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.LargeBtnWrapper}>
-          <FlatList
-            numColumns={2}
-            columnWrapperStyle={{ justifyContent: "space-evenly" }}
-            keyExtractor={(item, index) => index.toString()}
-            data={DATA}
-            renderItem={({ item, index }) => {
-              return (
-                <View style={styles.LargeBtn}>
-                  <Image
+                <Text
+                  style={{
+                    fontSize: 20,
+                    color: "#fff",
+                  }}
+                >
+                  المجموع الكلي:
+                </Text>
+              </ShadowCard>
+              <ShadowCard
+                radius={15}
+                mTop={20}
+                justifyContent={"center"}
+                backgroundColor="#db2539"
+              >
+                <Text
+                  style={{
+                    fontSize: 20,
+                    textAlign: "center",
+                    color: "#fff",
+                  }}
+                >
+                  اضف للسلة واختر منتج آخر
+                </Text>
+              </ShadowCard>
+              <View style={{ alignItems: "center" }}>
+                <ShadowCard
+                  radius={15}
+                  mTop={20}
+                  justifyContent={"center"}
+                  backgroundColor="#db2539"
+                  width="70%"
+                  mBot={10}
+                >
+                  <Text
                     style={{
-                      width: "100%",
-                      height: 120,
-                      resizeMode: "cover",
+                      fontSize: 20,
+                      textAlign: "center",
+                      color: "#fff",
                     }}
-                    source={{ uri: item.imageUrl }}
-                  />
-                  <View style={{ backgroundColor: item.color, width: "100%" }}>
-                    <Text
-                      style={{
-                        fontSize: 15,
-                        color: "white",
-                        alignSelf: "center",
-                        //   marginRight: 5,
-                      }}
-                    >
-                      {item.title}
-                    </Text>
-                  </View>
-                </View>
-              );
-            }}
-          />
+                  >
+                    إتما معملية الشراء
+                  </Text>
+                </ShadowCard>
+              </View>
+            </View>
+          </ScrollView>
         </View>
-      </ImageBackground>
-    </View>
+      </View>
+    </ImageBackground>
   );
 };
 
 export default TenthScreen;
 
 const styles = StyleSheet.create({
-  ButtonWrapper: {
-    width: "100%",
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    marginTop: 20,
+  main: {
+    width: "90%",
+    flex: 1,
   },
-  Button: {
-    paddingVertical: 20,
-    justifyContent: "space-around",
+  buttonStyle: {
     alignItems: "center",
-    flexDirection: "row",
-    borderRadius: 40,
-    paddingHorizontal: 10,
+    marginTop: 15,
   },
-  BtnText: {
+  textbuttons: {
+    backgroundColor: "#db2539",
+    width: "70%",
+    // paddingHorizontal: 30,
+    paddingVertical: 15,
+    borderRadius: 12,
+    textAlign: "center",
     fontSize: 20,
+
     color: "#fff",
   },
-  LargeBtnWrapper: {
-    flex: 1,
-    alignSelf: "center",
-    width: "100%",
-
-    marginTop: 20,
-  },
-  LargeBtn: {
-    minHeight: 170,
-    width: "40%",
-    //marginBottom: 20,
-    backgroundColor: "transparent",
-    //backgroundColor: "yellow",
-    borderRadius: 10,
-    elevation: 12,
-    shadowOffset: { width: 4, height: 5 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
+  cardDiv: {
+    //height: 160,
+    width: "45%",
+    backgroundColor: "#fff",
+    marginTop: 45,
+    borderRadius: 8,
+    elevation: 3,
     alignItems: "center",
-    justifyContent: "center",
+
+    paddingVertical: 10,
+  },
+  cardButton: {
+    //paddingHorizontal: 15,
+    width: "65%",
+    borderRadius: 20,
+    paddingVertical: 6,
+    backgroundColor: "#db2539",
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  InputListmainDiv: {
+    marginTop: 20,
   },
 });

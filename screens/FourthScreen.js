@@ -14,7 +14,7 @@ import HeartButton from "../components/HeartButton";
 import { Ionicons } from "@expo/vector-icons";
 import { GradientColors } from "../components/LinearGradient";
 import TransparentHeader from "../components/TransparentHeader";
-const StrawberryScreen = ({ navigation }) => {
+const FourthScreen = ({ navigation }) => {
   return (
     <>
       <ImageBackground
@@ -85,7 +85,7 @@ const StrawberryScreen = ({ navigation }) => {
   );
 };
 
-export default StrawberryScreen;
+export default FourthScreen;
 
 const styles = StyleSheet.create({
   container: {

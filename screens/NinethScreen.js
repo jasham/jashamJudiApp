@@ -8,13 +8,36 @@ import {
   ImageBackground,
   FlatList,
 } from "react-native";
-import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import TransparentHeader from "../components/TransparentHeader";
 import { LinearGradient } from "expo-linear-gradient";
-import { GradientColors } from "../components/LinearGradient";
+import { Entypo } from "@expo/vector-icons";
 
 const NinethScreen = ({ navigation }) => {
-  const DATA = ["نعيمي", "عجل بلدي", "نعيمي", "حري", "نجدي", "حري"];
+  const DATA = [
+    {
+      title: "الحجم",
+      imageUrl: require("../assets/seventh1.png"),
+      btnText: "صغير(.٩٥)",
+      symbol: "v",
+    },
+    {
+      title: "التقطيع",
+      imageUrl: require("../assets/seventh2.png"),
+      btnText: "ثلاجة",
+      symbol: "v",
+    },
+    {
+      title: "الكمية",
+      imageUrl: require("../assets/seventh3.png"),
+      btnText: "-         1        +",
+    },
+    {
+      title: "السعر",
+      imageUrl: require("../assets/seventh4.png"),
+      btnText: "ريال",
+      symbol: "(٩٥.)",
+    },
+  ];
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
@@ -24,49 +47,48 @@ const NinethScreen = ({ navigation }) => {
       >
         <TransparentHeader />
         <View style={styles.ButtonWrapper}>
-          <TouchableOpacity
-            style={{ width: "40%" }}
-            onPress={() => navigation.navigate("Tenth")}
+          <LinearGradient
+            style={{ borderRadius: 20, width: "50%" }}
+            colors={["#db2539", "#db2539"]}
           >
-            <LinearGradient
-              style={{ ...styles.Button, width: "100%" }}
-              colors={GradientColors.PinkButton}
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Tenth")}
+              style={{
+                width: "100%",
+                alignSelf: "center",
+                paddingHorizontal: 10,
+
+                marginTop: 10,
+                marginBottom: 10,
+                justifyContent: "center",
+                alignItems: "center",
+                // marginLeft: 10,
+              }}
             >
-              <Text style={styles.BtnText}>العروض</Text>
-              <View
-                style={{
-                  width: 33,
-                  height: 33,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  borderRadius: 33 / 2,
-                  borderWidth: 1.4,
-                  border: "solid red",
-                  borderColor: "#fff",
-                }}
-              >
-                <Text
-                  style={{
-                    color: "rgba(0,0,0,0.4)",
-                    fontSize: 22,
-                    color: "#fff",
-                  }}
-                >
-                  <FontAwesome5 name="percent" size={17} color="#fff" />
-                </Text>
-              </View>
-            </LinearGradient>
-          </TouchableOpacity>
-          <TouchableOpacity style={{ width: "40%" }}>
-            <LinearGradient
-              colors={GradientColors.PinkButton}
-              style={{ ...styles.Button, width: "100%" }}
-            >
-              <Text style={styles.BtnText}>المفضلة</Text>
-              <AntDesign name="hearto" size={30} color="#fff" />
-            </LinearGradient>
-          </TouchableOpacity>
+              <Text style={{ fontSize: 20, color: "#fff" }}>
+                {" "}
+                اسم المنتج نعيمي{" "}
+              </Text>
+            </TouchableOpacity>
+          </LinearGradient>
+
+          <View style={{ flexDirection: "row" }}>
+            <Image
+              style={{ width: 120, height: 80 }}
+              source={{
+                uri:
+                  "https://upload.wikimedia.org/wikipedia/commons/4/4b/Soay_ewe.jpg",
+              }}
+            />
+            <Entypo
+              name="cross"
+              size={30}
+              color="red"
+              style={{ justifyContent: "flex-start", alignSelf: "flex-start" }}
+            />
+          </View>
         </View>
+
         <View style={styles.LargeBtnWrapper}>
           <FlatList
             numColumns={2}
@@ -78,32 +100,71 @@ const NinethScreen = ({ navigation }) => {
                 <View style={styles.LargeBtn}>
                   <Image
                     style={{
-                      width: "100%",
-                      height: 120,
-                      resizeMode: "cover",
+                      width: 140,
+                      height: 80,
+                      resizeMode: "contain",
+                      marginTop: 10,
                     }}
-                    source={{
-                      uri:
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1U42w-_Z40ptozuxCyuNg85aeDdkrZxLLCw&usqp=CAU",
-                    }}
+                    source={item.imageUrl}
                   />
-                  <View style={{ backgroundColor: "maroon", width: "100%" }}>
-                    <Text
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      //   position: "absolute",
+                      //   bottom: 60,
+                      color: "red",
+                      fontSize: 30,
+                    }}
+                  >
+                    {item.title}
+                  </Text>
+                  <LinearGradient
+                    colors={["#db2539", "#db2539"]}
+                    style={{ borderRadius: 30 }}
+                  >
+                    <TouchableOpacity
                       style={{
-                        fontSize: 15,
-                        color: "white",
-                        alignSelf: "center",
-                        //   marginRight: 5,
+                        // backgroundColor: "red",
+                        width: 130,
+                        height: 40,
+                        justifyContent: "space-around",
+                        flexDirection: "row",
+                        alignItems: "center",
+                        borderRadius: 20,
                       }}
                     >
-                      {item}
-                    </Text>
-                  </View>
+                      <Text style={{ color: "#fff", fontSize: 20 }}>
+                        {" "}
+                        {item.btnText}
+                      </Text>
+                      <Text style={{ color: "#fff", fontSize: 20 }}>
+                        {" "}
+                        {item.symbol}
+                      </Text>
+                    </TouchableOpacity>
+                  </LinearGradient>
                 </View>
               );
             }}
           />
         </View>
+        <TouchableOpacity style={{ width: "50%", alignSelf: "center" }}>
+          <LinearGradient
+            style={{
+              width: "100%",
+              alignSelf: "center",
+              paddingVertical: 10,
+              borderRadius: 20,
+              marginTop: 10,
+              marginBottom: 10,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            colors={["#db2539", "#db2539"]}
+          >
+            <Text style={{ fontSize: 20, color: "#fff" }}>خیرات إضافية </Text>
+          </LinearGradient>
+        </TouchableOpacity>
       </ImageBackground>
     </View>
   );
@@ -114,21 +175,25 @@ export default NinethScreen;
 const styles = StyleSheet.create({
   ButtonWrapper: {
     width: "100%",
+    //height: 90,
+    marginTop: 17,
+    //paddingHorizontal: 10,
     alignItems: "center",
     flexDirection: "row",
     justifyContent: "space-around",
-    marginTop: 20,
   },
   Button: {
-    paddingVertical: 20,
+    width: "49%",
+    height: 80,
+    backgroundColor: "yellow",
     justifyContent: "space-around",
     alignItems: "center",
     flexDirection: "row",
     borderRadius: 40,
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
   },
   BtnText: {
-    fontSize: 20,
+    fontSize: 27,
     color: "#fff",
   },
   LargeBtnWrapper: {
@@ -136,14 +201,14 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     width: "100%",
 
-    marginTop: 20,
+    marginTop: 17,
   },
   LargeBtn: {
     minHeight: 170,
     width: "40%",
-    //marginBottom: 20,
-    backgroundColor: "transparent",
-    //backgroundColor: "yellow",
+    marginBottom: 20,
+    paddingBottom: 10,
+    backgroundColor: "#fff",
     borderRadius: 10,
     elevation: 12,
     shadowOffset: { width: 4, height: 5 },

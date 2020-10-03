@@ -12,7 +12,7 @@ import Header from "../components/Header";
 import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import { GradientColors } from "../components/LinearGradient";
-const MainScreen = ({ navigation }) => {
+const FirstScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Header colors={GradientColors.FirstScreen} />
@@ -133,7 +133,7 @@ const MainScreen = ({ navigation }) => {
   );
 };
 
-export default MainScreen;
+export default FirstScreen;
 
 const styles = StyleSheet.create({
   container: {
