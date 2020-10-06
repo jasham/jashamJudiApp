@@ -26,8 +26,11 @@ const TenthScreen = ({ navigation }) => {
         }}
       >
         <TransparentHeader />
-        <View style={styles.main}>
-          <ScrollView style={{ flex: 1 }}>
+        <ScrollView
+          style={{ flex: 1, width: "100%" }}
+          contentContainerStyle={{ width: "90%", alignSelf: "center" }}
+        >
+          <View style={styles.main}>
             <View style={{ alignItems: "flex-end" }}>
               <AntDesign name="close" size={24} color="#db2539" />
             </View>
@@ -171,8 +174,8 @@ const TenthScreen = ({ navigation }) => {
                 </ShadowCard>
               </View>
             </View>
-          </ScrollView>
-        </View>
+          </View>
+        </ScrollView>
       </View>
     </ImageBackground>
   );
@@ -182,7 +185,7 @@ export default TenthScreen;
 
 const styles = StyleSheet.create({
   main: {
-    width: "90%",
+    width: "100%",
     flex: 1,
   },
   buttonStyle: {

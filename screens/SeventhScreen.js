@@ -14,7 +14,15 @@ import { LinearGradient } from "expo-linear-gradient";
 import { GradientColors } from "../components/LinearGradient";
 
 const SeventhScreen = ({ navigation }) => {
-  const DATA = ["نعيمي", "عجل بلدي", "نعيمي", "حري", "نجدي", "حري"];
+  const DATA = [
+    { title: "نعيمي", image: require("../assets/eighth1.png") },
+    { title: "حري", image: require("../assets/eighth2.png") },
+    { title: "عجل بلدي", image: require("../assets/eighth3.png") },
+    { title: "نجدي", image: require("../assets/eighth4.png") },
+    { title: "نعيمي", image: require("../assets/eighth1.png") },
+    { title: "حري", image: require("../assets/eighth2.png") },
+  ];
+  //const DATA = ["نعيمي", "عجل بلدي", "نعيمي", "حري", "نجدي", "حري"];
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
@@ -83,11 +91,12 @@ const SeventhScreen = ({ navigation }) => {
                     style={{ alignSelf: "flex-start", marginLeft: 5 }}
                   />
                   <Image
-                    style={{ width: 140, height: 90 }}
-                    source={{
-                      uri:
-                        "https://cdn.pixabay.com/photo/2017/10/01/23/37/sheep-2807430__340.jpg",
-                    }}
+                    style={{ width: 140, height: 90, resizeMode: "contain" }}
+                    // source={{
+                    //   uri:
+                    //     "https://cdn.pixabay.com/photo/2017/10/01/23/37/sheep-2807430__340.jpg",
+                    // }}
+                    source={item.image}
                   />
 
                   <Text
@@ -98,7 +107,7 @@ const SeventhScreen = ({ navigation }) => {
                       marginRight: 5,
                     }}
                   >
-                    {item}
+                    {item.title}
                   </Text>
                 </View>
               );

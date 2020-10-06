@@ -17,41 +17,35 @@ const ElevenScreen = ({ navigation }) => {
   const DATA = [
     {
       title: "كابوريا",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/1/12/Liocarcinus_vernalis.jpg",
+      imageUrl: require("../assets/crab1.png"),
       color: "orange",
     },
     {
       title: "استاكوزا",
 
-      imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYaXcdJX2V_zyBlKrt_AJYWQzWM8VpIHNN1Q&usqp=CAU",
+      imageUrl: require("../assets/crab2.png"),
       color: "red",
     },
     {
       title: "سمك سردين",
 
-      imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZsdwN7iyh2jjJOAxxwCI1wzTttUhfFMtdaA&usqp=CAU",
+      imageUrl: require("../assets/crab3.png"),
       color: "green",
     },
 
     {
       title: "جمبري",
-      imageUrl:
-        "https://snappygoat.com/b/fbf29a74883b71582001fd8fb889c92cbd1e017a",
+      imageUrl: require("../assets/crab4.png"),
       color: "orange",
     },
     {
       title: "كابوريا",
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/1/12/Liocarcinus_vernalis.jpg",
+      imageUrl: require("../assets/crab1.png"),
       color: "orange",
     },
     {
       title: "استاكوزا",
-      imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYaXcdJX2V_zyBlKrt_AJYWQzWM8VpIHNN1Q&usqp=CAU",
+      imageUrl: require("../assets/crab2.png"),
       color: "red",
     },
   ];
@@ -137,7 +131,7 @@ const ElevenScreen = ({ navigation }) => {
                     height: 120,
                     resizeMode: "cover",
                   }}
-                  source={{ uri: item.imageUrl }}
+                  source={item.imageUrl}
                 />
                 <View style={{ backgroundColor: item.color, width: "100%" }}>
                   <Text

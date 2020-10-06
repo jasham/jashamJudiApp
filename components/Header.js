@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Image,
 } from "react-native";
 import {
   Feather,
@@ -33,7 +34,7 @@ export default function Header(props) {
         <View style={styles.IconWrapper}>
           <TouchableOpacity style={styles.Icon}>
             <Feather name="search" size={35} color="#fff" />
-            <Text style={styles.Text}>البحص</Text>
+            <Text style={styles.Text}>البحث</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.Icon}>
             <FontAwesome5 name="hotel" size={35} color="#fff" />
@@ -70,6 +71,12 @@ export default function Header(props) {
             style={styles.Icon}
           >
             <Ionicons name="ios-menu" size={50} color="#fff" />
+            {/* <View>
+              <Image
+                style={{ width: 50, height: 70, resizeMode: "contain" }}
+                source={require("../assets/menu.png")}
+              />
+            </View> */}
           </TouchableOpacity>
         </View>
 

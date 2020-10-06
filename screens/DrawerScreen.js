@@ -101,14 +101,14 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   listbt: {
-    backgroundColor: "green",
+    backgroundColor: "#80b055",
     width: "100%",
     paddingVertical: 15,
     paddingRight: 15,
     alignItems: "flex-end",
   },
   listbt2: {
-    backgroundColor: "#80b055",
+    backgroundColor: "#53B25B",
     width: "100%",
     paddingVertical: 15,
     paddingRight: 15,

@@ -16,25 +16,21 @@ import { GradientColors } from "../components/LinearGradient";
 const ThirteenScreen = ({ navigation }) => {
   const DATA = [
     {
-      imageUrl:
-        "https://upload.wikimedia.org/wikipedia/commons/1/12/Liocarcinus_vernalis.jpg",
-      color: "orange",
-    },
-    {
-      imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQYaXcdJX2V_zyBlKrt_AJYWQzWM8VpIHNN1Q&usqp=CAU",
+      title: "هامور كشر",
       color: "red",
     },
     {
-      imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZsdwN7iyh2jjJOAxxwCI1wzTttUhfFMtdaA&usqp=CAU",
+      title: "هامور سما ن",
+      color: "orange",
+    },
+    {
+      title: "هامور ابيض",
       color: "green",
     },
 
     {
-      imageUrl:
-        "https://snappygoat.com/b/fbf29a74883b71582001fd8fb889c92cbd1e017a",
-      color: "orange",
+      title: "هامور توين",
+      color: "purple",
     },
   ];
   return (
@@ -124,16 +120,13 @@ const ThirteenScreen = ({ navigation }) => {
                         marginRight: 5,
                       }}
                     >
-                      هامور كشر
+                      {item.title}
                     </Text>
                   </View>
 
                   <Image
                     style={{ width: 100, height: 100, resizeMode: "contain" }}
-                    source={{
-                      uri:
-                        "https://upload.wikimedia.org/wikipedia/commons/0/03/Illustration_from_The_Natural_History_of_British_Fishes_%281802%29_by_Edward_Donovan%2C_digitally_enhanced_by_rawpixel-com_12.jpg",
-                    }}
+                    source={require("../assets/fish.png")}
                   />
                   <LinearGradient
                     colors={GradientColors.SecondScreen}

@@ -26,9 +26,16 @@ export default function LoginScreen({ navigation }) {
         }}
       >
         <View style={styles.logoContainer}>
-          <View style={styles.logo}></View>
-          <View style={styles.logoTitle}>
-            <Text style={styles.logoText}>Judi</Text>
+          <View style={styles.logo}>
+            <Image
+              source={require("../assets/logo.png")}
+              style={{
+                width: 200,
+                height: 220,
+                resizeMode: "contain",
+                backgroundColor: "transparent",
+              }}
+            />
           </View>
         </View>
         <View style={{ width: "60%" }}>
@@ -121,12 +128,13 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     alignSelf: "center",
-    marginBottom: 20,
+    marginBottom: 90,
   },
   logo: {
     alignSelf: "center",
     width: 200,
     height: 200,
+
     //backgroundColor: "red",
   },
   logoText: {

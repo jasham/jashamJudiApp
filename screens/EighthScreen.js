@@ -14,7 +14,35 @@ import { LinearGradient } from "expo-linear-gradient";
 import { GradientColors } from "../components/LinearGradient";
 
 const EighthScreen = ({ navigation }) => {
-  const DATA = ["نعيمي", "عجل بلدي", "نعيمي", "حري", "نجدي", "حري"];
+  //const DATA = ["نعيمي", "عجل بلدي", "نعيمي", "حري", "نجدي", "حري"];
+  const DATA = [
+    {
+      title: "نعيمي",
+      image: require("../assets/meat1.png"),
+      color: "darkgreen",
+    },
+    {
+      title: "حري",
+      image: require("../assets/meat2.png"),
+      color: "#ecb472",
+    },
+    {
+      title: "عجل بلدي",
+      image: require("../assets/meat3.png"),
+      color: "brown",
+    },
+    {
+      title: "نجدي",
+      image: require("../assets/meat4.png"),
+      color: "#80b055",
+    },
+    {
+      title: "نعيمي",
+      image: require("../assets/meat1.png"),
+      color: "#ecb472",
+    },
+    { title: "حري", image: require("../assets/meat2.png"), color: "darkgreen" },
+  ];
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
@@ -82,12 +110,13 @@ const EighthScreen = ({ navigation }) => {
                       height: 120,
                       resizeMode: "cover",
                     }}
-                    source={{
-                      uri:
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1U42w-_Z40ptozuxCyuNg85aeDdkrZxLLCw&usqp=CAU",
-                    }}
+                    // source={{
+                    //   uri:
+                    //     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ1U42w-_Z40ptozuxCyuNg85aeDdkrZxLLCw&usqp=CAU",
+                    // }}
+                    source={item.image}
                   />
-                  <View style={{ backgroundColor: "maroon", width: "100%" }}>
+                  <View style={{ backgroundColor: item.color, width: "100%" }}>
                     <Text
                       style={{
                         fontSize: 15,
@@ -96,7 +125,7 @@ const EighthScreen = ({ navigation }) => {
                         //   marginRight: 5,
                       }}
                     >
-                      {item}
+                      {item.title}
                     </Text>
                   </View>
                 </View>

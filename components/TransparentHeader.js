@@ -30,10 +30,12 @@ export default function TransparentHeader(props) {
     >
       <View style={styles.InnerWrapper}>
         <View style={styles.IconWrapper}>
-          <TouchableOpacity style={styles.Icon}>
-            <Feather name="search" size={35} color="#fff" />
-            <Text style={styles.Text}>البحص</Text>
-          </TouchableOpacity>
+          {!props.noSearch && (
+            <TouchableOpacity style={styles.Icon}>
+              <Feather name="search" size={35} color="#fff" />
+              <Text style={styles.Text}>البحث</Text>
+            </TouchableOpacity>
+          )}
           <TouchableOpacity style={styles.Icon}>
             <FontAwesome5 name="hotel" size={35} color="#fff" />
             <Text style={styles.Text}>المتاجر</Text>

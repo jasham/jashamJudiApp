@@ -29,7 +29,9 @@ const NinethScreen = ({ navigation }) => {
     {
       title: "الكمية",
       imageUrl: require("../assets/seventh3.png"),
-      btnText: "-         1        +",
+      btnText: "1",
+      symbol: "+",
+      symbol1: "-",
     },
     {
       title: "السعر",
@@ -74,17 +76,18 @@ const NinethScreen = ({ navigation }) => {
 
           <View style={{ flexDirection: "row" }}>
             <Image
-              style={{ width: 120, height: 80 }}
-              source={{
-                uri:
-                  "https://upload.wikimedia.org/wikipedia/commons/4/4b/Soay_ewe.jpg",
-              }}
+              style={{ width: 120, height: 80, resizeMode: "contain" }}
+              source={require("../assets/sheep.png")}
             />
             <Entypo
               name="cross"
               size={30}
               color="red"
-              style={{ justifyContent: "flex-start", alignSelf: "flex-start" }}
+              style={{
+                justifyContent: "flex-start",
+                alignSelf: "flex-start",
+                marginTop: -10,
+              }}
             />
           </View>
         </View>
@@ -133,12 +136,15 @@ const NinethScreen = ({ navigation }) => {
                         borderRadius: 20,
                       }}
                     >
+                      {item.symbol1 ? (
+                        <Text style={{ color: "#fff", fontSize: 20 }}>
+                          {item.symbol1}
+                        </Text>
+                      ) : null}
                       <Text style={{ color: "#fff", fontSize: 20 }}>
-                        {" "}
                         {item.btnText}
                       </Text>
                       <Text style={{ color: "#fff", fontSize: 20 }}>
-                        {" "}
                         {item.symbol}
                       </Text>
                     </TouchableOpacity>

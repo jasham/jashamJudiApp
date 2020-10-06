@@ -7,13 +7,14 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 } from "react-native";
-import Header from "../components/Header";
+// import Header from "../components/Header";
 import { ShadowCard } from "../components/ShadowCard";
-import HeartButton from "../components/HeartButton";
-import { Ionicons } from "@expo/vector-icons";
-import { GradientColors } from "../components/LinearGradient";
-import { LinearGradient } from "react-native-svg";
+// import HeartButton from "../components/HeartButton";
+// import { Ionicons } from "@expo/vector-icons";
+// import { GradientColors } from "../components/LinearGradient";
+// import { LinearGradient } from "react-native-svg";
 import TransparentHeader from "../components/TransparentHeader";
 const SixthScreen = ({ navigation }) => {
   return (
@@ -54,29 +55,21 @@ const SixthScreen = ({ navigation }) => {
               width: "70%",
               flexDirection: "row",
               justifyContent: "space-evenly",
+              marginVertical: 20,
             }}
           >
-            <HeartButton
-              backgroundColor="white"
-              onPress={() => navigation.navigate("Seventh")}
-            >
-              <Text style={{ color: "red", textAlign: "center" }}>
-                ٤٥ ريال{" "}
-              </Text>
-              <Text style={{ color: "red", textAlign: "center" }}>كرتون</Text>
-              <View style={{ marginLeft: -8 }}>
-                <Ionicons name="md-add-circle" size={30} color="red" />
-              </View>
-            </HeartButton>
-            <HeartButton backgroundColor="white">
-              <Text style={{ color: "red", textAlign: "center" }}>
-                ٤٥ ريال{" "}
-              </Text>
-              <Text style={{ color: "red", textAlign: "center" }}>كرتون</Text>
-              <View style={{ marginLeft: -8 }}>
-                <Ionicons name="md-add-circle" size={30} color="red" />
-              </View>
-            </HeartButton>
+            <TouchableOpacity onPress={() => navigation.navigate("Seventh")}>
+              <Image
+                source={require("../assets/heart3.png")}
+                style={{ width: 80, height: 60 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                source={require("../assets/heart4.png")}
+                style={{ width: 80, height: 60 }}
+              />
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>

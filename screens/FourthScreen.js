@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import Header from "../components/Header";
@@ -31,6 +32,7 @@ const FourthScreen = ({ navigation }) => {
               height: 100,
               width: 100,
               resizeMode: "cover",
+              marginBottom: 10,
             }}
             source={require("../assets/strawberry.png")}
           />
@@ -58,15 +60,39 @@ const FourthScreen = ({ navigation }) => {
               width: "70%",
               flexDirection: "row",
               justifyContent: "space-evenly",
+              marginVertical: 20,
             }}
           >
-            <HeartButton green onPress={() => navigation.navigate("Fifth")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Fifth")}>
+              <Image
+                source={require("../assets/heart1.png")}
+                style={{ width: 80, height: 60 }}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                source={require("../assets/heart2.png")}
+                style={{ width: 80, height: 60 }}
+              />
+            </TouchableOpacity>
+            {/* <HeartButton green onPress={() => navigation.navigate("Fifth")}>
               <Text style={{ color: "white", textAlign: "center" }}>
                 ٤٥ ريال{" "}
               </Text>
               <Text style={{ color: "white", textAlign: "center" }}>كرتون</Text>
-              <View style={{ marginLeft: -8 }}>
-                <Ionicons name="md-add-circle" size={30} color="red" />
+              <View
+                style={{
+                  position: "absolute",
+                  bottom: -10,
+                  backgroundColor: "#db2539",
+                  width: 25,
+                  height: 25,
+                  borderRadius: 25 / 2,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Ionicons name="md-add" size={27} color="white" />
               </View>
             </HeartButton>
             <HeartButton green>
@@ -74,10 +100,21 @@ const FourthScreen = ({ navigation }) => {
                 ٤٥ ريال{" "}
               </Text>
               <Text style={{ color: "white", textAlign: "center" }}>كرتون</Text>
-              <View style={{ marginLeft: -8 }}>
-                <Ionicons name="md-add-circle" size={30} color="red" />
+              <View
+                style={{
+                  position: "absolute",
+                  bottom: -10,
+                  backgroundColor: "#db2539",
+                  width: 25,
+                  height: 25,
+                  borderRadius: 25 / 2,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Ionicons name="md-add" size={27} color="white" />
               </View>
-            </HeartButton>
+            </HeartButton> */}
           </View>
         </View>
       </ScrollView>

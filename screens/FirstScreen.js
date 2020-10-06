@@ -63,68 +63,92 @@ const FirstScreen = ({ navigation }) => {
             style={styles.LargeBtn}
             colors={GradientColors.ThirdScreen}
           >
-            <Text style={{ fontSize: 30, color: "white" }}> حلقة الخضار</Text>
+            <Text
+              style={{
+                fontSize: 30,
+                width: "70%",
+                color: "white",
+                textAlign: "center",
+              }}
+            >
+              حلقة الخضار
+            </Text>
             <Image
               style={{
                 width: 70,
                 height: 70,
                 resizeMode: "contain",
               }}
-              source={{
-                uri:
-                  "https://upload.wikimedia.org/wikipedia/commons/6/62/Orange_Slice.jpg",
-              }}
+              source={require("../assets/first1.png")}
             />
           </LinearGradient>
           <LinearGradient
             style={styles.LargeBtn}
             colors={GradientColors.PercentButton}
           >
-            <Text style={{ fontSize: 30, color: "white" }}> سوق السمك </Text>
+            <Text
+              style={{
+                fontSize: 30,
+                width: "70%",
+                color: "white",
+                textAlign: "center",
+              }}
+            >
+              سوق السمك
+            </Text>
             <Image
               style={{
                 width: 70,
                 height: 70,
                 resizeMode: "contain",
               }}
-              source={{
-                uri:
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtr07ksDyJ2s9B8cWNjF9RfgKZtjPa_OhH6A&usqp=CAU",
-              }}
+              source={require("../assets/first2.png")}
             />
           </LinearGradient>
           <LinearGradient
             style={styles.LargeBtn}
             colors={GradientColors.PinkButton}
           >
-            <Text style={{ fontSize: 30, color: "white" }}> سوق اللحوم</Text>
+            <Text
+              style={{
+                fontSize: 30,
+                width: "70%",
+                color: "white",
+                textAlign: "center",
+              }}
+            >
+              سوق اللحوم
+            </Text>
             <Image
               style={{
                 width: 70,
                 height: 70,
                 resizeMode: "contain",
               }}
-              source={{
-                uri:
-                  "https://i2.pickpik.com/photos/228/968/833/meat-food-eat-meat-cutting-preview.jpg",
-              }}
+              source={require("../assets/first3.png")}
             />
           </LinearGradient>
           <LinearGradient
             style={styles.LargeBtn}
             colors={GradientColors.YellowCard}
           >
-            <Text style={{ fontSize: 30, color: "white" }}> متاجر</Text>
+            <Text
+              style={{
+                fontSize: 30,
+                width: "70%",
+                color: "white",
+                textAlign: "center",
+              }}
+            >
+              متاجر
+            </Text>
             <Image
               style={{
                 width: 70,
                 height: 70,
                 resizeMode: "contain",
               }}
-              source={{
-                uri:
-                  "https://cdn.pixabay.com/photo/2018/03/21/21/13/cart-3248227_1280.jpg",
-              }}
+              source={require("../assets/first4.png")}
             />
           </LinearGradient>
         </View>
@@ -168,8 +192,9 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   LargeBtnWrapper: {
-    width: "100%",
-    paddingHorizontal: 10,
+    width: "95%",
+    alignSelf: "center",
+    //paddingHorizontal: 10,
     marginTop: 17,
 
     //height: "50%",
@@ -181,7 +206,7 @@ const styles = StyleSheet.create({
     marginBottom: 17,
     alignItems: "center",
     flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
+    justifyContent: "space-evenly",
+    //paddingHorizontal: 20,
   },
 });
