@@ -9,11 +9,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Header from "../components/Header";
+
 import { ShadowCard } from "../components/ShadowCard";
-import HeartButton from "../components/HeartButton";
-import { Ionicons } from "@expo/vector-icons";
-import { GradientColors } from "../components/LinearGradient";
 import TransparentHeader from "../components/TransparentHeader";
 const FourthScreen = ({ navigation }) => {
   return (
@@ -75,46 +72,6 @@ const FourthScreen = ({ navigation }) => {
                 style={{ width: 80, height: 60 }}
               />
             </TouchableOpacity>
-            {/* <HeartButton green onPress={() => navigation.navigate("Fifth")}>
-              <Text style={{ color: "white", textAlign: "center" }}>
-                ٤٥ ريال{" "}
-              </Text>
-              <Text style={{ color: "white", textAlign: "center" }}>كرتون</Text>
-              <View
-                style={{
-                  position: "absolute",
-                  bottom: -10,
-                  backgroundColor: "#db2539",
-                  width: 25,
-                  height: 25,
-                  borderRadius: 25 / 2,
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Ionicons name="md-add" size={27} color="white" />
-              </View>
-            </HeartButton>
-            <HeartButton green>
-              <Text style={{ color: "white", textAlign: "center" }}>
-                ٤٥ ريال{" "}
-              </Text>
-              <Text style={{ color: "white", textAlign: "center" }}>كرتون</Text>
-              <View
-                style={{
-                  position: "absolute",
-                  bottom: -10,
-                  backgroundColor: "#db2539",
-                  width: 25,
-                  height: 25,
-                  borderRadius: 25 / 2,
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Ionicons name="md-add" size={27} color="white" />
-              </View>
-            </HeartButton> */}
           </View>
         </View>
       </ScrollView>

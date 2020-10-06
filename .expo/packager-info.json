@@ -1,10 +1,10 @@
 {
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://qn-ki3.jasham.jashamjudi.exp.direct",
+  "packagerNgrokUrl": "https://packager.qn-ki3.jasham.jashamjudi.exp.direct",
+  "ngrokPid": 2772,
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 7028,
   "webpackServerPort": null
 }

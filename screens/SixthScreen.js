@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Dimensions,
   Image,
   ImageBackground,
   ScrollView,
@@ -9,12 +8,7 @@ import {
   View,
   TouchableOpacity,
 } from "react-native";
-// import Header from "../components/Header";
 import { ShadowCard } from "../components/ShadowCard";
-// import HeartButton from "../components/HeartButton";
-// import { Ionicons } from "@expo/vector-icons";
-// import { GradientColors } from "../components/LinearGradient";
-// import { LinearGradient } from "react-native-svg";
 import TransparentHeader from "../components/TransparentHeader";
 const SixthScreen = ({ navigation }) => {
   return (
